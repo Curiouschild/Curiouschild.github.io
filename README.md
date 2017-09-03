@@ -1,55 +1,27 @@
-# Jekyll Metro
+# HPSTR Jekyll Theme
 
-Jekyll Metro is a metro inspired theme for [Jekyll](http://jekyllrb.com).
+They say three times the charm, so here is another free responsive Jekyll theme for you. I've learned a ton since open sourcing [my first two themes](https://mademistakes.com/work/jekyll-themes/), and wanted to try a few new things this time around. If you've used my previous themes most of this should be familiar territory.
 
-## Summary
+**Compatible with Jekyll 3.0 and up.**
 
-Jekyll Metro is a theme built on top of bootstrap and other freely available libraries. Its aimed to provide a fully furnished Jekyll theme for personal sites with blog. 
+## What HPSTR brings to the table:
 
-## Version 1.0 Development (Beta 2 Released!)
+* Modern and minimal design.
+* Responsive templates for post, page, and post index `_layouts`. Looks great on mobile, tablet, and desktop devices.
+* Gracefully degrades in older browsers. Compatible with Internet Explorer 8+ and all modern browsers.  
+* Sweet animated menu with support for drop-downs.
+* Optional [Disqus](http://disqus.com) comments and social sharing links.
+* [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) support for a better social sharing experience.
+* Simple [custom 404 page](http://mmistakes.github.io/hpstr-jekyll-theme/404.html) to get you started.
+* [Syntax highlighting](http://mmistakes.github.io/hpstr-jekyll-theme/code-highlighting-post/) stylesheet to make your code examples look snazzy
+* [Available in Spanish](https://github.com/cruznick/hpstr-jekyll-theme/tree/es). Thanks [@cruznick](https://github.com/cruznick)!
 
-New features include:
-- Light box feature
-- Social media share widget
-- New colors
+![HPSTR Theme Preview screenshot](http://mmistakes.github.io/hpstr-jekyll-theme/images/hpstr-jekyll-theme-preview.jpg)
 
-Currently I am busy with other project and will devote less time in developing this theme forward. Updates and enhancements are welcome.
+---
 
+## Getting Started
 
-## Features
+HPSTR takes advantage of SCSS and data files to make customizing easier. This theme requires Jekyll 3.x and will not work with older versions properly.
 
-- Responsive Jekyll theme
-- Metro style Homepage
-  - Configurable tiles with different size
-  - Configurable colors for tiles
-  - Display of Latest and Recent articles as tiles
-- Pages for About Me, Resume with configurable color themes
-- Blog home page with listing of articles in pagination
-- Blog article page with configurable color themes
-- Easy integration with Google Analytics
-- Easy integration with Disqus for comments
-- Easy integration with txtpen for highlights
-
-## Demo
-
-You can see the live demo of this theme at [http://blog-olakara.rhcloud.com](http://blog-olakara.rhcloud.com)
-
-## Author
-
-**[Abdel Raoof Olakara](http://abdelraoof.com)**
-
-
-## Contributors
-
-**Stilyan Kongalov**
-- <https://github.com/Stilyan-Kangalov>
-
-**Peter Zhu**
-- <https://github.com/ZhuFengdaaa>
-
-
-## License
-
-Open sourced under the [MIT license](LICENSE.md).
-
-<3
+To learn how to install and use this theme check out the [Setup Guide](https://mmistakes.github.io/hpstr-jekyll-theme/theme-setup/) for more information.

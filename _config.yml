@@ -1,70 +1,89 @@
-# Configurations
-markdown: kramdown
-markdown_ext:  markdown,mkdown,mkdn,mkd,md
-highlighter: pygments
+title:            Site Title
+description:      Describe your website here.
+disqus_shortname: 
+reading_time:     true
+words_per_minute: 200
+# Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
+# When testing locally leave blank or use http://localhost:4000
+url:
 
-# Needed for backward compatibility
-gems: [jekyll-paginate]
+# Owner/author information
+owner:
+  name:           Your Name
+  avatar:         avatar.jpg
+  bio:            "Your bio goes here. It shouldn't be super long but a good sentence or two should suffice."
+  email:          you@email.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        
+  facebook:       
+  github:         
+  stackexchange:  
+  linkedin:       
+  instagram:      
+  flickr:         
+  tumblr:         
+  # google plus id, include the '+', eg +mmistakes
+  google_plus:
 
-# Permalinks
-permalink:        /blog/:year/:month/:day/:title
+# Background image to be tiled on all pages
+background: 
 
-# Setup
-title:            'Jekyll Metro'
-tagline:          'A Metro theme for Jekyll'
-description:      'A Sample blog using Jekyll Metro'
-url:              'http://192.168.1.11:4000'
-baseurl:          ''
+# Analytics and webmaster tools stuff goes here
+google_analytics:   
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:         
 
-# Navigation
-navigation:
-- text: About
-  url: /about/
-- text: Resume
-  url: /resume/
-- text: Blog
-  url: /blog/
-- text: Tags
-  url: /tags/
-- text: Archive
-  url : /archive/
-- text: Search
-  url: /search/
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/New_York
+future:      false  # publish future dated posts --  true, false (default) 
+highlighter: rouge
+markdown:    kramdown
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-feed
+sass:
+  sass_dir: _sass
+  style: compressed
 
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
 
-# Author Details
-author:         'Abdel Raoof Olakara'
+# Amount of post to show on home page
+paginate: 5
 
-#Social Media links (Use complete URL except for email)
-dribbble:
-email:
-facebook:       'https://www.facebook.com/olakara'
-flickr:
-github:         'https://github.com/olakara'
-gplus:          'https://plus.google.com/100425464897246255887/'
-instagram:
-pinterest:
-linkedin:       'https://ae.linkedin.com/in/olakara/'
-rss:
-stackoverflow:  'http://stackoverflow.com/users/185655/abdel-raoof'
-twitter:        'https://twitter.com/olakara'
+kramdown:
+  input: GFM
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
 
-# Google Analytics
-gahandler: 'UA-52149651-1'
-
-#if footersvg is 'true' the social media links will be shown top on the copy right in the footer
-footersvg: 'true'
-
-# Disqus
-disqushandler: 'testingblogo'
-
-# txtpen
-txtpenhandler: 'testingblogo'
-
-# Blog Configurations
-paginate: 10 # Posts per page on the blog index
-paginate_path: '/blog/page:num'
-destination: ./_site
-
-# Custom vars
-version:          0.9x beta 2
+include: 
+  - .htaccess
+exclude: 
+  - "*.less"
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - CHANGELOG
+  - Capfile
+  - Gemfile
+  - Gruntfile.js
+  - LICENSE
+  - README
+  - Rakefile
+  - config
+  - gulpfile.js
+  - lib
+  - log
+  - node_modules
+  - package.json
+  - spec
+  - tmp
