@@ -10,4 +10,4 @@ My First Post
 **I love coding!**
 ```chuck```
 
-![GitHub](img/formal-selfie.jpg "GitHub,Social Coding")
+![GitHub](/img/formal-selfie.jpg "GitHub,Social Coding")
