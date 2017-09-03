@@ -38,5 +38,5 @@ end
 </ul>
 {% endfor %}
 
-![GitHub](/img/formal-selfie.jpg "GitHub,Social Coding")
+![GitHub](/img/selfie20170903.jpg "GitHub,Social Coding")
 
