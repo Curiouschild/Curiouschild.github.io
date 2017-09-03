@@ -1,42 +1,125 @@
 ---
-layout: page
-description: "一生想做浪漫极客"
+layout: master
+title: Home
+description: Home Page for Jekyll Metro Theme
 ---
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
-{% endfor %}
+<div class="container">
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+	<header class="row">
+	  <div class="col-sm-6 col-md-12" style="margin-top:25px;margin-bottom:25px">
+	    <h1 id="pin">{{site.title}}</h1>
+	  </div>
+	</header>
+	<nav>
+		<div class="row">
+ 			<div class="col-md-4 col-sm-6 col-xs-12">
+				<a href="about/" title="About Me">
+					<div class="tile purple profile">
+						<h2 class="title">About Me</h2>
+						<p>Hello World, I am {{site.author}}.</p>
+					</div>
+				</a>
+		    </div>
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="resume/" title="Resume" class="tile red">
+					<i class="icon-rems" style="font-size:8em"></i>
+				</a>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="blog/" title="Blog"  class="tile orange">
+					<i class="icon-blog" style="font-size:8em"></i>
+				</a>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="feed.xml" title="RSS Feed" class="tile orange">
+					<i class="icon-rss" style="font-size:8em"></i>
+				</a>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				{% for post in site.posts offset:1 limit:1 %}
+				<a href="{{post.url}}" title="Recent Article">
+					<div class="tile green">
+						<h3 class="title">Recent Article</h3>
+						<h4 class="title">{{ post.title }}</h4>
+						<p> {{ post.content | strip_html | truncatewords: 10 }}</p>
+					</div>
+				</a>
+				{% endfor %}
+			</div>
+
+
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				{% for post in site.posts limit:1 %}
+				<a href="{{post.url}}" title="Latest Article">
+					<div class="tile red">
+						<h3 class="title">Latest Article</h3>
+						<h4 class="title">{{ post.title }}</h4>
+						<p> {{ post.content | strip_html | truncatewords: 10 }}</p>
+					</div>
+				</a>
+				{% endfor %}
+			</div>
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="{{site.stackoverflow}}" title="StackOverflow" class="tile darken" >
+					<i class="icon-skow" style="font-size:8em;color:white"></i>
+				</a>
+			</div>
+
+			<div class="col-md-4 col-sm-6 col-xs-12">
+				{% for post in site.posts %}
+					{% if post.featured == true %}
+					<a href="{{post.url}}" title="Featured Article">
+						<div class="tile orange">
+							<h3 class="title">Featured Article</h3>
+							<h4 class="title">{{ post.title }}</h4>
+							<p> {{ post.content | strip_html | truncatewords: 10 }}</p>
+						</div>
+					</a>
+					{% break %}
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="row" style="margin-bottom:25px">
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="{{site.twitter}}" title="Twitter" class="tile blue">
+					<i class="icon-twtr" style="font-size:8em"></i>
+				</a>
+			</div>
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="{{site.gplus}}" title="Google Plus"  class="tile orange">
+					<i class="icon-gpls" style="font-size:8em"></i>
+				</a>
+			</div>
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="{{site.facebook}}" class="tile blue">
+					<i class="icon-fcbk" style="font-size:8em"></i>
+				</a>
+			</div>
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+
+				<a href="{{site.github}}" title="Github" class="tile purple">
+					<i class="icon-gthb" style="font-size:8em"></i>
+				</a>
+
+			</div>
+
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<a href="{{site.linkedin}}" title="LinkedIn" class="tile blue">
+					<i class="icon-lkin" style="font-size:8em"></i>
+				</a>
+			</div>
+		</div>
+	</nav>
+</div>
