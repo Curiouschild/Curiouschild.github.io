@@ -4,4 +4,3 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 ---
-<img src="/img/formal-selfie.jpg" height="150em" width="110em">

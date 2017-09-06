@@ -170,6 +170,12 @@
   }
 }
 
+.copy-right {
+  text-align: center;
+  color: gray;
+  font-size: 12px;
+}
+
 
 
 /**
@@ -200,6 +206,17 @@
 .post-link {
   display: block;
   @include relative-font-size(1.5);
+}
+
+//about me
+.about-me {
+    position: relative;
+    top: -10.8em;
+    left: 13em;
+}
+
+.about-me > p {
+  margin-bottom: 25px;
 }
 
 
