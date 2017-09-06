@@ -189,10 +189,12 @@
   @include relative-font-size(1.25);
 }
 
+
 .post-list {
   margin-left: 0;
   list-style: none;
-
+  position: relative;
+  top: -8em;
   > li {
     margin-bottom: $spacing-unit;
   }
