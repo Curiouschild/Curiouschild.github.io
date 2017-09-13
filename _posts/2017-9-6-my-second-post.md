@@ -1,9 +1,14 @@
 ---
-title:  "Try to Modify the Default Jekyll Layout"
+title:  "Covariance and Contravariance"
 date:   2017-09-06 14:26:01 +0930
 categories: foo
+
 ---
 
-foofoofoo
+covariance
+===
+![Covariance](\img\covariant.png "covariance")
 
-fooo
+contravoriance
+===
+![Contravariance](\img\contravariant.png "contravirance")
