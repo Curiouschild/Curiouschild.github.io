@@ -18,6 +18,7 @@ I have encountered two problems about scanner.
 			}
 			System.out.println("I will no be diplayed");
 		}
+	
 	Reason: This is becasue nextInt() does not comsume the invalid input. It is right there and will be received by the nextInt() the next iteration. So the exception will be caught each loop, and the loop always continue.
 	
 	How to solve: You can use a next() or nextLine() to clear the input stream.	
