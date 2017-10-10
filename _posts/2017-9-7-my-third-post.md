@@ -22,10 +22,12 @@ I have encountered two problems about scanner.
 	Reason: This is becasue nextInt() does not comsume the invalid input. It is right there and will be received by the nextInt() the next iteration. So the exception will be caught each loop, and the loop always continue.
 	
 	How to solve: You can use a next() or nextLine() to clear the input stream.
+	
++ 
 
 
-
-+ I wanted to read the java source code in Eclipse, but failed to install Apple java package in my Mac. Finally I downloaded the linux JDK package at Oracle's website in which there is a src.zip file that contains source code.
+***
+I wanted to read the java source code in Eclipse, but failed to install Apple java package in my Mac. Finally I downloaded the linux JDK package at Oracle's website in which there is a src.zip file that contains source code.
 
 ***
 
@@ -69,4 +71,39 @@ Note that it is generally necessary to override the hashCode method whenever thi
 
 ***
 A good practice is to design and write methods that take the most generic form of your object as possible.***
-
+x =+ 1; x=    + 1 are legal 
+***
+5. Which of these statements are incorrect?
+a) Assignment operators are more efficiently implemented by Java run-time system than their equivalent long forms.
+b) Assignment operators run faster than their equivalent long forms.
+c) Assignment operators can be used only with numeric and character data type.
+d) None
+View Answer
+
+Answer: d
+***
+& > ^ > ?:
+
+() > ++ > * > >>
+***
+two case constants in the same switch can't have identical values.***
+
+byte, char, and short values are promoted to int before the operation.
+
+```
+short a, b, c;
+a = 1 ;	
+b = 2 ;
+c = a + b ; //compiler error
+
+All literal floating point values are viewed as double.
+	
+float float1 = 27.9;	//compiler error
+```
+***
+	
+Variable in a switch can be only of type char, byte, short, int, or String.
+***
+Constructors does not have any return type, not even void.
+***
+A class member declared protected becomes member of subclass of private type?
