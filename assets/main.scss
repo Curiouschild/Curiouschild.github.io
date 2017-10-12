@@ -3,3 +3,31 @@
 ---
 
 @import "minima";
+.site-footer {
+	background-color:black;
+	border-radius: 0 0 20px 20px;
+}
+
+.site-header {
+	background-color:black;
+}
+
+.site-nav .page-link{
+color:white;}
+
+.site-title, .site-title:visited {
+    color: white;
+}
+
+a.post-link, a.post-link:visited {
+color:black;
+}
+
+a:visited {
+    color: grey;
+}
+
+a {
+    color: grey;
+    text-decoration: none;
+}

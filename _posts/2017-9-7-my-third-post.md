@@ -106,4 +106,19 @@ Variable in a switch can be only of type char, byte, short, int, or String.
 ***
 Constructors does not have any return type, not even void.
 ***
-A class member declared protected becomes member of subclass of private type?
+A class member declared protected becomes member of subclass of private type.***
+instanceof must be followed with a type instead of an object.
+***
+covariance
+===
+![Covariance](\img\covariant.png "covariance")
+
+contravoriance
+===
+![Contravariance](\img\contravariant.png "contravirance")
+
+invariance
+===
+***
+
+

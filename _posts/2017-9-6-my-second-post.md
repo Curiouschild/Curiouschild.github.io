@@ -5,13 +5,3 @@ categories: foo
 
 ---
 
-covariance
-===
-![Covariance](\img\covariant.png "covariance")
-
-contravoriance
-===
-![Contravariance](\img\contravariant.png "contravirance")
-
-invariance
-===
