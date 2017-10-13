@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Category
 permalink: /category/
+title: Category
 ---
 <div id='cat_cloud'>
 {% for cat in site.categories %}

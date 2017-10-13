@@ -1,0 +1,81 @@
+
+.site-footer {
+	background-color:black;
+	border-top-color: rgb(120, 120, 120);
+    height: 173px;
+}
+
+.site-header {
+	background-color:black;
+	border-bottom-color: rgb(120, 120, 120);
+
+}
+
+.site-nav .page-link{
+color:white;}
+
+.site-title, .site-title:visited {
+    color: white;
+}
+
+a.post-link, a.post-link:visited {
+color:white;
+}
+
+a:visited {
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+//keep footer at the bottom
+main.page-content {
+	background-image: url(/img/2017-10-13/shadow.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+    min-height:100%;
+}
+
+html, body {
+    height:100%;
+}
+
+
+
+.post-meta {
+    font-size: 14px;
+    color: rgb(220, 220, 220);
+}
+
+//wrapper width
+.wrapper {
+        max-width: calc(1000px - (30px * 2));
+}
+
+//post list div
+div#post-list {
+    margin: 65px 0;
+    padding: 5px 20px;
+}
+//post list ul
+.post-list {
+    position: relative;
+    top: auto;
+}
+//carousel wrap
+.wrap{
+    margin-top: 40px;
+
+}
+
+ul {
+        color: rgb(180, 180, 180);
+
+}
+h1,h2,h3,h4,h5,h6,p{
+            color: rgb(255, 255, 255);
+
+}
