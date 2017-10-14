@@ -15,6 +15,8 @@ layout: default
  <div id="post-list">
   <ul class="post-list">
     {% for post in site.posts %}
+    <div class="post-block">
+      <div class="post-list-block-content">
       <li>
         {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
         
@@ -24,11 +26,15 @@ layout: default
 
         <span class="post-meta">Posted on {{ post.date | date: date_format }}</span>
       </li>
+      </div>
       <div class="post-list-padding">
       <hr class="post-list-hr">
+      </div>
+    </div>
     {% endfor %}
   </ul>
   </div>
+
 
 
 </div>
