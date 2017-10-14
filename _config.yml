@@ -16,8 +16,7 @@
 title: Chu's blog
 email: chuw@andrew.cmu.edu
 description: > # this means to ignore newlines until "baseurl:"
-  This blog is to record anything interesting or useful in my work and life. It has been a week since I joined CMU. Peers and faculties are excellent.
-  Hope to become a better man after this challenging journey!
+  this time – this space personal development and self improvement blog is focused on simple living and overcoming challenges by skillful means.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://curiouschild.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ChuWu1995
