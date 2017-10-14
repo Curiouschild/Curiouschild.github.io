@@ -5,9 +5,15 @@ categories: Jekyll
 tags: Jekyll
 ---
 
-My First Post
-=======
-**I love coding!**
+It's the second week of this semester and a logic time to start building my personal blog. Now I'm begining with github pages and jekyll. This post is about tech issues of learning jekyll.
+
+<!-- more -->
+
+```java
+	for(int i=1; i<5; i++){
+	new chuck();
+	}
+```
 
 //use raw to escape liquid syntax
 {% raw %}
@@ -26,12 +32,10 @@ My First Post
 </ul>
 {% endfor %}
 
-```chuck```
-
-~~~
+```java
 Man chuck;
 chuck = new Man();
-~~~
+```
 
 highlight code
 ---------

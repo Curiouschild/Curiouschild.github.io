@@ -28,8 +28,10 @@ paginate_path: "page:num"
 
 # Build settings
 markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
 theme: minima
-highlighter: rouge
+highlighter: rouge;
 plugins:
   - jekyll-feed
 

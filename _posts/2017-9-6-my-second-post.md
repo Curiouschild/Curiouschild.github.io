@@ -6,3 +6,5 @@ tags: Mobile
 
 ---
 
+javascript is in the next semester.
+<!-- more -->

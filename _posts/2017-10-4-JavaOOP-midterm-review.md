@@ -1,13 +1,15 @@
 ---
 title:  "Java OOP Midterm Review"
-date:   2017-09-07 14:26:01 +0930
+date:   2017-10-04 20:26:01 +0930
 categories: Java 
 tags: JavaOOP
 ---
+Time is so fast and now it is the week 5, and the mid-term exam for the Mini 1 semester is coming. I have used a couple of hours to look though the slides before visiting the Kangaroo island. And the day before Java exam, I practiced hundreds of sample questions. Now I put summary here.
+<!-- more -->
 I have encountered two problems about scanner.
 
 + get stuck in a loop if an exception is caught
-
+```java
 		Scanner sc = new Scanner(System.in);
 		while (true) {
 			System.out.println("I will stuck in the loop");
@@ -18,7 +20,7 @@ I have encountered two problems about scanner.
 			}
 			System.out.println("I will no be diplayed");
 		}
-	
+```
 	Reason: This is becasue nextInt() does not comsume the invalid input. It is right there and will be received by the nextInt() the next iteration. So the exception will be caught each loop, and the loop always continue.
 	
 	How to solve: You can use a next() or nextLine() to clear the input stream.
@@ -32,11 +34,11 @@ I wanted to read the java source code in Eclipse, but failed to install Apple ja
 ***
 
 Use Array.copyOf() to copy array.
-		
+```java		
 	public String(char value[]) {
         this.value = Arrays.copyOf(value, value.length);
     }
-    
+  ```
    + subsequent modification of
      the character array does not affect the newly created string.
 ***
@@ -52,15 +54,15 @@ rather than conversing this order.
 
 Calculate square root.
 
-```
+```java
 float square = 4;    // number to find sq root of   float squareRoot = square;    // first guess   while (squareRoot * squareRoot - square > 0.001) { // How accurate?       squareRoot = (squareRoot + square/squareRoot)/2;       System.out.println("Next try will be " + squareRoot);   }```
 ***
 Use static methods and variables without writing class name and dot notation before them. 
 eg. Controller.turnLeft --> turnLeft
-	static import packagename.Controller.*;
-***
+```java	static import packagename.Controller.*;
+```***
 
-```
+```java
 Object o1 = null;
 Object o2 = null;
 System.out.println(o1==o2);//true
@@ -90,14 +92,15 @@ two case constants in the same switch can't have identical values.***
 
 byte, char, and short values are promoted to int before the operation.
 
-```
-short a, b, c;
-a = 1 ;	
-b = 2 ;
-c = a + b ; //compiler error
 
+```java
+	short a, b, c;
+	a = 1 ;	
+	b = 2 ;
+	c = a + b ; //compiler error
+```
 All literal floating point values are viewed as double.
-	
+```java
 float float1 = 27.9;	//compiler error
 ```
 ***
