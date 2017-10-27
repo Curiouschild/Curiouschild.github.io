@@ -2,7 +2,8 @@ VideoCapture read(Mat frame)
 	The methods/functions combine VideoCapture::grab() and VideoCapture::retrieve() in one call. This is the most convenient method for reading video files or capturing data from decode and return the just grabbed frame.
 ***
 generate csv file in Mac terminal 
-find *.pgm > at.txt
+
+python csv.py // this file can be downloaded from official facerecognition tutorial
 ***
 https://github.com/opencv/opencv_contrib
 
@@ -16,4 +17,3 @@ cd ../build //the path of build folder
 make -j5
 sudo make install
 
-python csv.py //

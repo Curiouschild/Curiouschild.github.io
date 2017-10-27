@@ -124,4 +124,9 @@ invariance
 ===
 ***
 
+
+Why does it.next() throw java.util.ConcurrentModificationException?
+
+***
+
 
