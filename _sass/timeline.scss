@@ -1,11 +1,11 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
 
 
 
-/* -------------------------------- 
+/* --------------------------------
 
 Primary style
 
@@ -43,7 +43,7 @@ h1, h2 {
   font-weight: bold;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Modules - reusable parts of our design
 
@@ -61,9 +61,9 @@ Modules - reusable parts of our design
   clear: both;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main components 
+Main components
 
 -------------------------------- */
 
@@ -468,4 +468,8 @@ Main components
     -o-transform: translateX(0);
     transform: translateX(0);
   }
+}
+
+section#cd-timeline {
+    margin-top: 3em;
 }
