@@ -59,7 +59,5 @@ test: read data from member.yml in _data
 </ul>
 {% endfor %}
 
-![GitHub](/img/selfie20170903.jpg "GitHub,Social Coding")
 
 <h4>Category</h4>
-
