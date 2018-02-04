@@ -1,0 +1,6 @@
+
+```java
+int a = 3;
+a++;
+System.out.println(a);
+```
