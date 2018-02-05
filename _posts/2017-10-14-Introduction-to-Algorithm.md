@@ -62,7 +62,7 @@ counting sort is often used as a subroutine in radix sort.
 
 Show how to sort n integers in the range 0 to n 3 ? 1 in O(n) time.
 solution?
-https://classes.soe.ucsc.edu/cmps101/Winter13/hw/hw3sol.pdf
+[hw3sol.pdf](https://classes.soe.ucsc.edu/cmps101/Winter13/hw/hw3sol.pdf)
 
 in a general base-k number system, numbers in the range 0 to R ? 1 can be represented using d = logk (R) digits.
 
@@ -92,11 +92,9 @@ use two stacks to implement a queue
 3. Linked List
 either singly linked or doubly linked, it may be sorted or not, and it may be circular or not.
 reverse a singly linked list:
-	iterative & recursive
-	https://kwfeng.wordpress.com/2010/12/04/reverse-linked-list/
+	[iterative & recursive](https://kwfeng.wordpress.com/2010/12/04/reverse-linked-list/)
 
-time complexity of list operations:
-	https://ita.skanev.com/10/problems/01.html
+[time complexity of list operations:](https://ita.skanev.com/10/problems/01.html)
 O(1) : delete(L, x)
 
 4. rooted tree
