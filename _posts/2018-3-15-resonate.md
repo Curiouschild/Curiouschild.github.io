@@ -1,5 +1,5 @@
 ---
-title:  "Resonate Test"
+title:  "Tech Test"
 date:   2018-3-15 00:50:01 +0930
 categories: Java
 tags: Java
@@ -202,7 +202,5 @@ public int[] findLargestThreeSum(int[] inputArr) {
 ```
 
 Real world problem:
-Use any technology to write a web application that shows Resonates twitter feed in a responsive page. (@resonateAU)
-
 
 <a class="twitter-timeline" data-tweet-limit="3" href="https://twitter.com/resonateAU">Tweets by resonateAU</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
