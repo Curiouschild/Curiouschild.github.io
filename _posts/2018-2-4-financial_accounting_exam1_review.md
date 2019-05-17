@@ -1,7 +1,7 @@
 ---
 title:  "Financial Accounting Summary"
 date:   2018-2-4 11:50:01 +0930
-categories: Accounting
+categories: Others
 tags: Accounting
 ---
 
@@ -45,14 +45,14 @@ Current assets
   Accounts receivalbe                       ***
   Prepaid insurance                         ***
 Total current assets
-None current assets                               
+None current assets
 Property, plant, and equipement
   land                                      ***
   Buildings                                 ***
-  Less: Accumulated depreciation--        
+  Less: Accumulated depreciation--
         buildings                           *** *** (aseest - depreciation)
   Equipment                                 ***
-  Less: Accumulated depreciation--          
+  Less: Accumulated depreciation--
         equipment                           *** *** *** (here is the total none-current assets)
 Intangible assets
   patent                                            ***
@@ -64,7 +64,7 @@ Intangible assets
 Current liabilities
   Account payable                           ***
   Current maturity of note payalbe          ***
-  Interest payable                          ***                           
+  Interest payable                          ***
     Total current Liabilities                    ***
 Long-term liabilities
   Note payable                                   ***
@@ -198,7 +198,7 @@ Net Income                            ***
 4. earnings per share is a deceptive ratio
     income decrease
     equity increase
-5. 20-year bond 
+5. 20-year bond
     times interest earned;debt to assets ratio
   short-term loan
     current ratio; AR turnover

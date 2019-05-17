@@ -98,7 +98,7 @@ Exception
 	Catching Multiple Exceptions
 		Overridden methods may declare the same exceptions, fewer exceptions, or more specific exceptions, but not additional or more generic exceptions. A method may declare multiple exceptions with a comma-separated list.
 
-		catch (ClassNotFoundException | IOException e)		
+		catch (ClassNotFoundException | IOException e)
 		Avoid to catch a generic exception: The type alternatives that are separated with vertical bars cannot have an inheritance relationship. You may not list both a FileNotFoundException and an IOException in a multi-catch clause.
 
 

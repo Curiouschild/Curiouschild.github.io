@@ -4,8 +4,8 @@ permalink: /contact/
 title: Contact
 ---
 
-Welcome to contact me!  
+Open to connections!
 =====
-Adress: Adelaide 5000, Australia  
+Adress: Carnegie Mellon University, PA, US
 
 Email: chuw@andrew.cmu.edu

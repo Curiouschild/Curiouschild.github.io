@@ -1,11 +1,11 @@
 ---
-title:  "First Map Reduce"
+title:  "Map Reduce On Wikipedia Pageview Data"
 date:   2018-2-1 14:26:01 +0930
-categories: CloudComputing
+categories: DataScience
 tags: CC
 ---
 
-This my first attempt on MapReduce. My purpose is to analyse 170 TB Wikipedia pageview data. A single personal computer is not capable to process a dataset with such a volume. So I take help from AWS. Below is my simple mapper and reducer.
+The purpose is to get the top viewed pages.
 <!-- more -->
 
 Map
