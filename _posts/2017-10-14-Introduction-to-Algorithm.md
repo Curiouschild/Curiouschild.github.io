@@ -20,7 +20,7 @@ Chapter 1 The Role of Algorithms in Computing
 		consider only the leading term of a formula
 		also ignore the leading term?s constant coefficient
 	divide-and-conquer
-		One advantage of divide-and-conquer algorithms is that their running times are often easily determined
+		One advantage of divide-and-con	·quer algorithms is that their running times are often easily determined
 3. Growth of function
 	asymptotic notation
 		upper bounds: O o
