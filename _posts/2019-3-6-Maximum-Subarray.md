@@ -7,7 +7,8 @@ tags: Array
 
 [{{page.title}}](https://leetcode.com/problems/maximum-subarray/){:target="_blank"}
 
-Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+    Given an integer array nums, find the contiguous subarray (containing 
+    at least one number) which has the largest sum and return its sum.
 
 1. DP brutal
 

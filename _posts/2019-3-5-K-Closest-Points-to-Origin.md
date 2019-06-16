@@ -7,11 +7,12 @@ tags: PriorityQueue
 
 [{{page.title}}](https://leetcode.com/problems/k-closest-points-to-origin/){:target="_blank"}
 
-We have a list of points on the plane.  Find the K closest points to the origin (0, 0).
+    We have a list of points on the plane.  Find the K closest points to the origin (0, 0).
 
-(Here, the distance between two points on a plane is the Euclidean distance.)
+    (Here, the distance between two points on a plane is the Euclidean distance.)
 
-You may return the answer in any order.  The answer is guaranteed to be unique (except for the order that it is in.)
+    You may return the answer in any order.  The answer is guaranteed to be unique
+    (except for the order that it is in.)
 
 ```java
 public int[][] kClosest(int[][] points, int K) {

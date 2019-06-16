@@ -7,7 +7,7 @@ tags: TwoPointer HashMap HashSet
 
 [{{page.title}}](https://leetcode.com/problems/longest-substring-without-repeating-characters/){:target="_blank"}
 
-Given a string, find the length of the longest substring without repeating characters.
+    Given a string, find the length of the longest substring without repeating characters.
 
 1. TwoPointer with HashSet
 
