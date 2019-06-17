@@ -1,6 +1,6 @@
 ---
 title:  "56. Merge Intervals"
-date:   2019-3-6 023:15:45 +0930
+date:   2019-3-6 23:15:45 +0930
 categories: Leetcode
 tags: Interval
 ---

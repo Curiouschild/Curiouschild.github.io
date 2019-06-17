@@ -1,13 +1,13 @@
 ---
 title:  "53. Maximum Subarray"
-date:   2019-3-6 012:22:21 +0930
+date:   2019-3-6 12:22:21 +0930
 categories: Leetcode
 tags: Array
 ---
 
 [{{page.title}}](https://leetcode.com/problems/maximum-subarray/){:target="_blank"}
 
-    Given an integer array nums, find the contiguous subarray (containing 
+    Given an integer array nums, find the contiguous subarray (containing
     at least one number) which has the largest sum and return its sum.
 
 1. DP brutal

@@ -1,6 +1,6 @@
 ---
 title:  "21. Merge Two Sorted Lists"
-date:   2019-3-6 010:15:23 +0930
+date:   2019-3-6 10:15:23 +0930
 categories: Leetcode
 tags: LinkedList Recursive
 ---

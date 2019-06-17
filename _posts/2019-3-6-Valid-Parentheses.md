@@ -1,6 +1,6 @@
 ---
 title:  "20. Valid Parentheses"
-date:   2019-3-6 022:45:35 +0930
+date:   2019-3-6 22:45:35 +0930
 categories: Leetcode
 tags: Stack Parentheses
 ---

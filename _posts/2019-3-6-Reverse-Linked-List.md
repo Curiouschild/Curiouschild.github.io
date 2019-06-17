@@ -1,6 +1,6 @@
 ---
 title:  "206. Reverse Linked List"
-date:   2019-3-6 023:55:25 +0930
+date:   2019-3-6 23:55:25 +0930
 categories: Leetcode
 tags: LinkedList
 ---

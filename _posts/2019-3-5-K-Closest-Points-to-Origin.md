@@ -1,6 +1,6 @@
 ---
 title:  "973. K Closest Points to Origin"
-date:   2019-3-5 021:20:51 +0930
+date:   2019-3-5 21:20:51 +0930
 categories: Leetcode
 tags: PriorityQueue
 ---

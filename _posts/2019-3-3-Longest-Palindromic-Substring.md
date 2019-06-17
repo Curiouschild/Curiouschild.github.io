@@ -1,13 +1,13 @@
 ---
 title:  "5. Longest Palindromic Substring"
-date:   2019-3-3 015:18:20 +0930
+date:   2019-3-3 15:18:20 +0930
 categories: Leetcode
 tags: DP TwoPointer
 ---
 
 [5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/){:target="_blank"}
 
-    Given a string s, find the longest palindromic substring in s. 
+    Given a string s, find the longest palindromic substring in s.
     You may assume that the maximum length of s is 1000.
 
 1. Two Pointer Version

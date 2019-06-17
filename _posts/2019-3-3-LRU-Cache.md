@@ -1,6 +1,6 @@
 ---
 title:  "146. LRU Cache"
-date:   2019-3-3 010:04:03 +0930
+date:   2019-3-3 10:04:03 +0930
 categories: Leetcode
 tags: LinkedHashMap DataStructure
 ---

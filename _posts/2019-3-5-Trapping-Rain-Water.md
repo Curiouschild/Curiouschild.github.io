@@ -1,13 +1,13 @@
 ---
 title:  "42. Trapping Rain Water"
-date:   2019-3-5 023:12:51 +0930
+date:   2019-3-5 23:12:51 +0930
 categories: Leetcode
 tags: DynamicProgramming MonotonicStack
 ---
 
 [{{page.title}}](https://leetcode.com/problems/trapping-rain-water/){:target="_blank"}
 
-    Given n non-negative integers representing an elevation map where the 
+    Given n non-negative integers representing an elevation map where the
     width of each bar is 1, compute how much water it is able to trap after raining.
 
 1. DynamicProgramming: Two Pass(left max and right max)
