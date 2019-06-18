@@ -7,12 +7,12 @@ tags: LinkedList Copy
 
 [{{page.title}}](https://leetcode.com/problems/copy-list-with-random-pointer/){:target="_blank"}
 
-A linked list is given such that each node contains an additional
-random pointer which could point to any node in the list or null.
+    A linked list is given such that each node contains an additional
+    random pointer which could point to any node in the list or null.
 
-Return a deep copy of the list.
+    Return a deep copy of the list.
 
-![Example1](/img/posts/copy_list_with_random_pointer.png)
+  ![Example1](/img/posts/copy_list_with_random_pointer.png)
 
 * Recursive
 
