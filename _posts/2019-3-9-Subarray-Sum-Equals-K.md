@@ -2,7 +2,7 @@
 title:  "560. Subarray Sum Equals K"
 date:   2019-3-9 11:26:13 +0930
 categories: Leetcode
-tags: HashMap Array
+tags: HashMap Array DynamicMap
 ---
 
 [{{page.title}}](https://leetcode.com/problems/subarray-sum-equals-k/){:target="_blank"}
