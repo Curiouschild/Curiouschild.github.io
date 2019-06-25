@@ -48,7 +48,7 @@ public int calculate(String s) {
     return result;
 }
 ```
-* Recursion
+* General template Recursion
 
 ```java
 public int calculate(String s) {
