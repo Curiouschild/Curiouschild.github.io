@@ -5,7 +5,7 @@ categories: Leetcode
 tags: DynamicProgramming String Recursive
 ---
 
-[{{page.title}}](){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/word-break/){:target="_blank"}
 
     Given a non-empty string s and a dictionary wordDict containing a list of non-empty
     words, determine if s can be segmented into a space-separated sequence of one or more
@@ -28,8 +28,6 @@ tags: DynamicProgramming String Recursive
     Output: true
     Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
                  Note that you are allowed to reuse a dictionary word.
-
-
 
 
 * Bootom Up
