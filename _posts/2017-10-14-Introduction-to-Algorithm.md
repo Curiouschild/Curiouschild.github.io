@@ -1,7 +1,7 @@
 ---
 title:  "Introduction to Algorithms"
 date:   2017-12-20 14:26:01 +0930
-categories: Algorithm
+categories: CMU
 tags: Algorithm
 ---
 Start to read _Introduction to Algorithms_ and watch open source videos.

@@ -1,7 +1,7 @@
 ---
 title:  "Face Recognition with JavaFX and OpenCV"
 date:   2017-10-23 10:26:01 +0930
-categories: Java
+categories: CMU
 tags: OpenCV
 ---
 Developed a biometric user identification system using a web camera to identify the student’s faces and display a dashboard of information about the student to the receptionist. The system can also alert the reception to strangers.

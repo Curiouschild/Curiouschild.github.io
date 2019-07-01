@@ -1,7 +1,7 @@
 ---
 title:  "Map Reduce On Wikipedia Pageview Data"
 date:   2018-2-1 14:26:01 +0930
-categories: DataScience
+categories: CMU
 tags: CC
 ---
 

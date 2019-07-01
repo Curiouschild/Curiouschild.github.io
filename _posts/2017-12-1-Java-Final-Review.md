@@ -1,7 +1,7 @@
 ---
 title:  "Java Fianl Review"
 date:   2017-11-20 14:26:01 +0930
-categories: Java
+categories: CMU
 tags: JavaOOP
 ---
 

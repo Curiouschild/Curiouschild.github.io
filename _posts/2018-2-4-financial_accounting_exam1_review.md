@@ -1,7 +1,7 @@
 ---
 title:  "Financial Accounting Summary"
 date:   2018-2-4 11:50:01 +0930
-categories: Others
+categories: CMU
 tags: Accounting
 ---
 
