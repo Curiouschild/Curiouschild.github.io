@@ -1,13 +1,13 @@
 ---
-title:  "13. Roman to Integer"
-date:   2019-3-11 14:02:11 +0930
+title:  "12. Integer to Roman"
+date:   2019-3-25 14:13:00 +0930
 categories: Leetcode
-tags: Math
+tags: TwoPointers
 ---
 
-[{{page.title}}](https://leetcode.com/problems/roman-to-integer/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/integer-to-roman/){:target="_blank"}
 
-see also [{{page.title}}](https://leetcode.com/problems/integer-to-roman/){:target="_blank"}
+see also [{{page.title}}](https://leetcode.com/problems/roman-to-integer/){:target="_blank"}
 
     Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
@@ -49,28 +49,15 @@ see also [{{page.title}}](https://leetcode.com/problems/integer-to-roman/){:targ
 
 
 ```java
-public int romanToInt(String s) {
-    HashMap<String, Integer> map = new HashMap<>();
-    map.put("I", 1);
-    map.put("V", 5);
-    map.put("X", 10);
-    map.put("L", 50);
-    map.put("C", 100);
-    map.put("D", 500);
-    map.put("M", 1000);
-    map.put("IV", 4);
-    map.put("IX", 9);
-    map.put("XL", 40);
-    map.put("XC", 90);
-    map.put("CD", 400);
-    map.put("CM", 900);
-    int result = 0, n = 0;
-    for(int i = 0; i < s.length(); i++) {
-        if(i+1 < s.length() && map.containsKey(s.substring(i, i+2)))
-            n = map.get(s.substring(i, i++ + 2));
-        else
-            n = map.get("" + s.charAt(i));
-        result += n;
+public String intToRoman(int n) {
+    int[] arr = new int[] {1000,900,500,400,100,90,50,40,10,9,5,4,1};
+    String[] val = new String[] {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
+    int p = 0;
+    String result = "";
+    while(n > 0) {
+        while(arr[p] > n) p++;
+        result += val[p];
+        n -= arr[p];
     }
     return result;
 }
