@@ -5,7 +5,9 @@ categories: Leetcode
 tags: BFS String Graph
 ---
 
-[{{page.title}}](){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/word-ladder/){:target="_blank"}
+
+See also [126. Word Ladder 2](https://leetcode.com/problems/word-ladder-ii/){:target="_blank"}
 
 
     Given two words (beginWord and endWord), and a dictionary's word list, find the
