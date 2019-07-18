@@ -2,7 +2,7 @@
 title:  "212. Word Search II"
 date:   2019-4-3 20:33:00 +0930
 categories: Leetcode
-tags: backtrack Tier
+tags: Backtracking Tier
 ---
 
 [{{page.title}}](https://leetcode.com/problems/word-search-ii/){:target="_blank"}
