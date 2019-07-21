@@ -22,8 +22,148 @@ tags: DataStructure
 
     Challenge: Perform all these in O(1) time complexity.
 
+* HashMap + DoublyLinkedList
+
+```java
+
+class AllOne {
+    HashMap<String, Integer> map = new HashMap<>();
+    HashMap<Integer, Node> v2k = new HashMap<>();
+    Node head, tail;
+    public AllOne() {}
+
+    public void inc(String key) {
+        // System.out.println("++" + key);
+        if(!map.containsKey(key)) {
+            Node nh = v2k.getOrDefault(1, new Node(1));
+            v2k.put(1, nh);
+            nh.keys.add(key);
+            if(head == null) {
+                head = nh;
+                tail = head;
+            } else if(head != nh) {
+                nh.next = head;
+                head.prev = nh;
+                head = nh;
+            }
+        } else {
+            int v = map.get(key);
+            Node curr = v2k.get(v), nn = v2k.getOrDefault(v+1, new Node(v+1));
+            v2k.put(v+1, nn);
+            nn.keys.add(key);
+            curr.keys.remove(key);
+            if(nn != curr.next) {
+                nn.next = curr.next;
+                if(curr.next != null) curr.next.prev = nn;
+                curr.next = nn;
+                nn.prev = curr;
+            }
+            if(curr == tail) tail = nn;
+            if(curr.keys.isEmpty()) {
+                v2k.remove(curr.v);
+                if(curr == head) {
+                    head = nn;
+                    nn.prev = null;
+                } else {
+                    curr.prev.next = nn;
+                    nn.prev = curr.prev;
+                }
+                curr.next = null;
+                curr.prev = null;
+            }
+        }
+        map.put(key, map.getOrDefault(key, 0)+1);
+        // print();
+    }
+
+    public void dec(String key) {
+        if(!map.containsKey(key)) return;
+        // System.out.println("--" + key);
+        int v = map.get(key);
+        Node curr = v2k.get(v);
+        curr.keys.remove(key);
+        if(v == 1) {
+            map.remove(key);
+            if(curr.keys.isEmpty()) {
+                v2k.remove(v);
+                head = curr.next;
+                if(curr == tail) tail = null;
+                curr.prev = null;
+                curr.next = null;
+            }
+        } else {
+            map.put(key, v-1);
+            Node np = v2k.getOrDefault(v-1, new Node(v-1));
+            v2k.put(v-1, np);
+            np.keys.add(key);
+            np.next = curr;
+            if(curr == head) {
+                head = np;
+            } else if(np != curr.prev) {
+                curr.prev.next = np;
+                np.prev = curr.prev;
+            }
+            curr.prev = np;
+
+            if(curr.keys.isEmpty()) {
+                v2k.remove(v);
+                if(curr == head) {
+                    head = np;
+                }
+                if(curr == tail) {
+                    tail = np;
+                } else {
+                    np.next = curr.next;
+                    curr.next.prev = np;
+                }
+
+                curr.next = null;
+                curr.prev = null;
+            }
+        }
+        // print();
+
+    }
+    public String getMinKey() {
+        if(head == null) return "";
+        return head.keys.iterator().next();
+    }
+    public String getMaxKey() {
+        if(tail == null) return "";
+        return tail.keys.iterator().next();
+    }
 
 
+    class Node {
+        Node prev;
+        Node next;
+        int v;
+        HashSet<String> keys = new HashSet<String>();
+        public Node(int v) {
+            this.v = v;
+        }
+
+        public String toString() {
+            return keys.toString();
+        }
+    }
+
+    public void print() {
+        Node curr = head;
+        System.out.println("v2k" + v2k);
+         System.out.println("h=" + (curr == null ? "null" : head.keys) + " t=" + (tail == null ? "null" : tail.keys));
+        while(curr != null) {
+            System.out.println(curr.v + " ->" + curr.keys);
+            curr = curr.next;
+        }
+        System.out.println();
+    }
+}
+
+```
+
+
+* TreeMap nlogn
 
 ```java
 class AllOne {
