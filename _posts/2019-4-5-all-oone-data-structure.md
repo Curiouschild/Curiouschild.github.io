@@ -96,6 +96,7 @@ class AllOne {
             Node np = v2k.getOrDefault(v-1, new Node(v-1));
             v2k.put(v-1, np);
             np.keys.add(key);
+
             np.next = curr;
             if(curr == head) {
                 head = np;
@@ -142,7 +143,6 @@ class AllOne {
         public Node(int v) {
             this.v = v;
         }
-
         public String toString() {
             return keys.toString();
         }
