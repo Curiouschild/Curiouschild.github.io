@@ -1,11 +1,9 @@
 ---
 layout: page
-permalink: /contact/
-title: Contact
+permalink: /resume/
+title: Resume
 ---
 
 Open to connections!
-=====
-Adress: Carnegie Mellon University, PA, US
 
-Email: chuw@andrew.cmu.edu
+<object data="/assets/data/pdf/CV_2019_7_20.pdf" width="1000" height="1260" type='application/pdf'/>
