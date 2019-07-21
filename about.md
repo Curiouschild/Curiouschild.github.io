@@ -1,7 +1,5 @@
 ---
 layout: about
-title: About
-permalink: /about/
+title: Timeline
+permalink: /timeline/
 ---
-
-
