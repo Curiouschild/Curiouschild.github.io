@@ -19,7 +19,7 @@ tags: MonotonicStack
     The largest rectangle is shown in the shaded area, which has area = 10 unit.
 
 
-* MonotonicStack N * M
+* MonotonicStack N
 
 ```java
 public int largestRectangleArea(int[] h) {
@@ -40,3 +40,8 @@ public int largestRectangleArea(int[] h) {
     return result;
 }
 ```
+
+* divede and conquer NlogN
+
+find the lowest bar, divide the histograms into left and right parts.
+result = max(loestHeight * widthOfTheHistogram, maxOfLeftPart, maxOfRightPart)

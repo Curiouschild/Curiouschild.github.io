@@ -68,5 +68,6 @@ public static final int RED = 0, BLUE = 1;
            color = color == RED ? BLUE : RED;
        }
    }
+ }
 
 ```
