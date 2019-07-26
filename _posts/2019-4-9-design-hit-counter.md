@@ -1,8 +1,8 @@
 ---
 title:  "362. Design Hit Counter"
-date:   2019-4-7 22:23:00 +0930
+date:   2019-4-9 22:23:00 +0930
 categories: Leetcode
-tags: DataStructure
+tags: DataStructure TreeMap Queue Array
 ---
 
 [{{page.title}}](https://leetcode.com/problems/design-hit-counter/){:target="_blank"}
@@ -47,7 +47,7 @@ tags: DataStructure
 
 * Two Array; Record the timestamps
 
-```java 
+```java
     private int[] times;
     private int[] hits;
     /** Initialize your data structure here. */
