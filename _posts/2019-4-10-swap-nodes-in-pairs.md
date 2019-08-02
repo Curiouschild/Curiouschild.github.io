@@ -2,7 +2,7 @@
 title:  "24. Swap Nodes in Pairs"
 date:   2019-4-10 22:22:00 +0930
 categories: Leetcode
-tags: LinkedList
+tags: LinkedList ReverseNodes
 ---
 
 [{{page.title}}](https://leetcode.com/problems/swap-nodes-in-pairs/){:target="_blank"}
