@@ -1,6 +1,6 @@
 ---
 title:  "143. Reorder List"
-date:   2019-4-18 21:06:00 +0930
+date:   2019-4-19 21:06:00 +0930
 categories: Leetcode
 tags: List DataStructure
 ---
