@@ -1,6 +1,6 @@
 ---
 title:  "312. Burst Balloons"
-date:   2019-4-20 12:00:00 +0930
+date:   2019-4-21 12:00:00 +0930
 categories: Leetcode
 tags: DynamicProgramming
 ---
