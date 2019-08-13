@@ -29,11 +29,14 @@ tags: Recursive
 
 
 * Recursive
+Optimized with hashmap to store inorder element -> index
 
 ```java
 
 class Solution {
+    HashMap<Integer, Integer> map = new HashMap<>(); // inorder element -> index
     public TreeNode buildTree(int[] preorder, int[] inorder) {
+        for(int i = 0; i < inorder.length; i++) map.put(inorder[i], i);
         return recursion(preorder, inorder, 0, preorder.length-1, 0, inorder.length-1);
     }
 
@@ -42,13 +45,12 @@ class Solution {
         if(l > r) return null;
         TreeNode root = new TreeNode(preorder[l]);
         if(l < r) {
-            int i = il;
-            while(i <= ir && inorder[i] != preorder[l]) i++;
+            int i = map.get(preorder[l]);
+            // while(i <= ir && inorder[i] != preorder[l]) i++;
             int leftLen = i - il, rightLen = ir - i;
             root.left = recursion(preorder, inorder, l+1, l+leftLen, il, i-1);
             root.right = recursion(preorder, inorder, l+leftLen+1, r, i+1, ir);
         }
         return root;
     }
-  }
 ```
