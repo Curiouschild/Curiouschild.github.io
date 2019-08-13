@@ -22,8 +22,12 @@ This problem reminds me the N-Queens problem: [N-queens](https://curiouschild.gi
 
     A sudoku puzzle...
 
+![img1](/img/posts/sudoku-solver-1.png)
 
     ...and its solution numbers marked in red.
+
+![img2](/img/posts/sudoku-solver-2.png)
+
 
     Note:
 
@@ -35,6 +39,8 @@ This problem reminds me the N-Queens problem: [N-queens](https://curiouschild.gi
 
 
 * BackTraking
+
+
 ```java
 class Solution {
     HashSet[] rows = new HashSet[9], cols = new HashSet[9], subs = new HashSet[9];
