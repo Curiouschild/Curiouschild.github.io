@@ -8,7 +8,12 @@ tags: Matrix
 [{{page.title}}](https://leetcode.com/problems/shortest-distance-from-all-buildings/){:target="_blank"}
 
 
+
 * Brutal BFS starting from every 0
+
+A good comment on why don't start at 1
+"Does anyone want to ask Why don't we start from '0'? This is also what I am thinking. At the first glance, the time complexity of starting from buildings O(B*M*N) (B: # of buildings) and starting from empty places O(E*M*N) (E: # of empty places) might be the same. If in an interview, I think we can ask for clarification. If the empty places are far more than buildings, ex. we have 1 million empty places and only 1 building, starting from building is better. So it depends on how many empty places and buildings that we have. We are not going to say this way or that way is better, but it's a kind of trade-off."
+https://leetcode.com/problems/shortest-distance-from-all-buildings/discuss/76891/Java-solution-with-explanation-and-time-complexity-analysis/216592
 
 ```java
 
