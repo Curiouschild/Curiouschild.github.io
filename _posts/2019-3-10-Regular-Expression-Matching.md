@@ -73,21 +73,21 @@ public boolean isMatch(String s, String p) {
 
     //    "" s0 s1 s2 s3
     // "" T  F  F  F  F
-    // p1 ?
-    // p2 ?
-    // p3 ?
-    // p4 ?
+    // p1
+    // p2
+    // p3
+    // p4
 
     for(int i = 1; i < p.length()+1; i++) {
         // true when previous is true and current or then next is a "*"
         dp[i][0] = dp[i-1][0] && (p.charAt(i-1) == '*' || (i < p.length() && p.charAt(i) == '*'));
         for(int j = 1; j < s.length()+1; j++) {
-            // add a p only when currenty p is a "*"
+            // add a p only when currenty p[i] is a "*" ,two situation: use p[i-1] or not use p[i-1]
             boolean addP = p.charAt(i-1) == '*' && (dp[i-1][j] || i-2 >= 0 && dp[i-2][j]);
             // add a s when previous p is "*", and this s is the same with the char before the "*"
             boolean addS = dp[i][j-1] && p.charAt(i-1) == '*' && (p.charAt(i-2) == '.' || p.charAt(i-2) == s.charAt(j-1));
             // add both when the left up diagonal is true and current s and p match
-            boolean addBoth = dp[i-1][j-1] && (p.charAt(i-1) == '.' || p.charAt(i-1) == s.charAt(j-1));
+            boolean addBoth = dp[i-1][j-1] && (p.charAt(i-1) == '.' || p.charAt(i-1) == s.charAt(j-1) || i-2 >= 0 && p.charAt(i-1) == '*' && s.charAt(j-1) == p.charAt(i-2));
             dp[i][j] = addP || addS || addBoth;
         }
     }
