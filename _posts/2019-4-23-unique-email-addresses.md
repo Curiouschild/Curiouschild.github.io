@@ -5,8 +5,9 @@ categories: Leetcode
 tags: String
 ---
 
-[{{page.title}}](https://leetcode.com/problems/rotate-image/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/unique-email-addresses/){:target="_blank"}
 
+    test
     Every email consists of a local name and a domain name, separated by the @ sign.
 
     For example, in alice@leetcode.com, alice is the local name, and leetcode.com is the domain name.
@@ -31,26 +32,6 @@ tags: String
     Input: ["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]
     Output: 2
     Explanation: "testemail@leetcode.com" and "testemail@lee.tcode.com" actually receive mails
-
-
-```java
-
-public void rotate(int[][] matrix) {
-    int offset = 0;
-    while(true) {
-        if(matrix.length - offset * 2 <= 1) break;
-        int far = matrix.length - 1 - offset;
-        for(int j = offset; j < far; j++) {
-            int temp = matrix[offset][j];
-            matrix[offset][j] = matrix[far-(j-offset)][offset];
-            matrix[far-(j-offset)][offset] = matrix[far][far-(j-offset)];
-            matrix[far][far-(j-offset)] = matrix[j][far];
-            matrix[j][far] = temp;
-        }
-        offset++;
-    }
-}
-```
 
 
 * Buffer array

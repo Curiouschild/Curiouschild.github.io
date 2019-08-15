@@ -12,7 +12,7 @@ tags: DynamicProgramming
 
 ![img1](/img/posts/knight-dialer-1.png)
 
-![img1](/img/posts/knight-dialer-2.png)
+![img2](/img/posts/knight-dialer-2.png)
 
 
     This time, we place our chess knight on any numbered key of a phone pad (indicated above), and the knight makes N-1 hops.  Each hop must be from one key to another numbered key.
@@ -37,10 +37,9 @@ tags: DynamicProgramming
 
 
 ```java
-
 int MOD = 1000000007;
 public int knightDialer(int N) {
-    int[][] dict = {{4,6},{6,8},{7,9},{4,8},{0,3,9},{},{0,1,7},{2,6},{1,3},{2,4}};
+    int[][] dict = { {4,6},{6,8},{7,9},{4,8},{0,3,9},{},{0,1,7},{2,6},{1,3},{2,4} };
     int[] cnt = new int[10];
     Arrays.fill(cnt, 1);
     while(N > 1) {

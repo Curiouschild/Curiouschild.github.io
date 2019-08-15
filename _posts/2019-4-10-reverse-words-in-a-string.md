@@ -1,8 +1,8 @@
 ---
 title:  "151. Reverse Words in a String"
-date:   2019-4-9 23:17:00 +0930
+date:   2019-4-10 22:08:00 +0930
 categories: Leetcode
-tags: PriorityQueue
+tags: Array String
 ---
 
 [{{page.title}}](https://leetcode.com/problems/reverse-words-in-a-string/){:target="_blank"}

@@ -2,7 +2,7 @@
 title:  "128. Longest Consecutive Sequence"
 date:   2019-4-19 21:30:00 +0930
 categories: Leetcode
-tags: List DataStructure
+tags: HashSet
 ---
 
 [{{page.title}}](https://leetcode.com/problems/longest-consecutive-sequence/){:target="_blank"}

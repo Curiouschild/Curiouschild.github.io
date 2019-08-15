@@ -5,7 +5,7 @@ categories: Leetcode
 tags: Stack DataStructure
 ---
 
-[{{page.title}}](https://leetcode.com/problems/top-k-frequent-words/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/flatten-nested-list-iterator/){:target="_blank"}
 
     Given a nested list of integers, implement an iterator to flatten it.
 

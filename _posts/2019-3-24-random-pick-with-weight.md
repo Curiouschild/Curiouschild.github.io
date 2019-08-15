@@ -5,7 +5,7 @@ categories: Leetcode
 tags: BinarySearch
 ---
 
-[{{page.title}}](https://leetcode.com/problems/subarray-sums-divisible-by-k/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/random-pick-with-weight/){:target="_blank"}
 
     Given an array w of positive integers, where w[i] describes the weight of index i,
     write a function pickIndex which randomly picks an index in proportion to its weight.
