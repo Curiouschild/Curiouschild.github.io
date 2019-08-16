@@ -2,7 +2,7 @@
 title:  "64. Minimum Path Sum"
 date:   2019-4-24 09:12:00 +0930
 categories: Leetcode
-tags: DynamicProgramming
+tags: DynamicProgramming Medium
 ---
 
 [{{page.title}}](https://leetcode.com/problems/minimum-path-sum/){:target="_blank"}

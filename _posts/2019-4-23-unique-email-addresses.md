@@ -2,7 +2,7 @@
 title:  "929. Unique Email Addresses"
 date:   2019-4-23 21:06:00 +0930
 categories: Leetcode
-tags: String
+tags: String Easy
 ---
 
 [{{page.title}}](https://leetcode.com/problems/unique-email-addresses/){:target="_blank"}

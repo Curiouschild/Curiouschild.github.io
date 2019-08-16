@@ -2,7 +2,7 @@
 title:  "427. Construct Quad Tree"
 date:   2019-4-22 23:17:00 +0930
 categories: Leetcode
-tags: Recursive
+tags: Recursive Medium
 ---
 
 [{{page.title}}](https://leetcode.com/problems/construct-quad-tree/){:target="_blank"}

@@ -2,7 +2,7 @@
 title:  "317. Shortest Distance from All Buildings"
 date:   2019-4-22 23:40:00 +0930
 categories: Leetcode
-tags: Matrix
+tags: Matrix Search Hard
 ---
 
 [{{page.title}}](https://leetcode.com/problems/shortest-distance-from-all-buildings/){:target="_blank"}

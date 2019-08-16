@@ -2,7 +2,7 @@
 title:  "48. Rotate Image"
 date:   2019-4-22 10:40:00 +0930
 categories: Leetcode
-tags: Matrix
+tags: Matrix Medium
 ---
 
 [{{page.title}}](https://leetcode.com/problems/rotate-image/){:target="_blank"}

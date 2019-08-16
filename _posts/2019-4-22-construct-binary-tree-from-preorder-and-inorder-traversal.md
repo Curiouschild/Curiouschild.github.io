@@ -2,7 +2,7 @@
 title:  "105. Construct Binary Tree from Preorder and Inorder Traversal"
 date:   2019-4-22 13:28:00 +0930
 categories: Leetcode
-tags: Recursive
+tags: Recursive Medium
 ---
 
 [{{page.title}}](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/){:target="_blank"}

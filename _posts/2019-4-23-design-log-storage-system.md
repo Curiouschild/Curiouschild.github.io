@@ -2,7 +2,7 @@
 title:  "635. Design Log Storage System"
 date:   2019-4-23 20:52:00 +0930
 categories: Leetcode
-tags: TreeMap
+tags: TreeMap Medium
 ---
 
 [{{page.title}}](https://leetcode.com/problems/design-log-storage-system/){:target="_blank"}

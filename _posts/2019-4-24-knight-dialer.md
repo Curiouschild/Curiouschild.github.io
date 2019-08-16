@@ -2,7 +2,7 @@
 title:  "935. Knight Dialer"
 date:   2019-4-24 09:12:00 +0930
 categories: Leetcode
-tags: DynamicProgramming
+tags: DynamicProgramming Medium
 ---
 
 [{{page.title}}](https://leetcode.com/problems/knight-dialer/){:target="_blank"}

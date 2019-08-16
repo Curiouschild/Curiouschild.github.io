@@ -2,7 +2,7 @@
 title:  "234. Palindrome Linked List"
 date:   2019-4-22 13:50:00 +0930
 categories: Leetcode
-tags: Recursive LinkedList
+tags: Recursive LinkedList Easy
 ---
 
 [{{page.title}}](https://leetcode.com/problems/palindrome-linked-list){:target="_blank"}

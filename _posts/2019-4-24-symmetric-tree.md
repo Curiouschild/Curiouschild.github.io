@@ -2,7 +2,7 @@
 title:  "101. Symmetric Tree"
 date:   2019-4-24 11:58:00 +0930
 categories: Leetcode
-tags: Tree
+tags: Tree Easy
 ---
 
 [{{page.title}}](https://leetcode.com/problems/symmetric-tree/){:target="_blank"}
