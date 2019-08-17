@@ -27,7 +27,6 @@ tags: Tree Easy
 * pre order traverse
 
 ```java
-
 int result = 0;
 public int diameterOfBinaryTree(TreeNode root) {
     if(root == null) return 0;

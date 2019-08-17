@@ -1,8 +1,8 @@
 ---
 title:  "198. House Robber"
-date:   2019-4-25 11:58:00 +0930
+date:   2019-4-25 19:22:00 +0930
 categories: Leetcode
-tags: DFS Hard
+tags: DynamicProgramming Easy
 ---
 
 [{{page.title}}](https://leetcode.com/problems/house-robber/){:target="_blank"}
