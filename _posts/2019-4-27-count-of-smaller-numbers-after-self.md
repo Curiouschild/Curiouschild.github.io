@@ -19,10 +19,10 @@ tags: DynamicProgramming Hard
     To the right of 6 there is 1 smaller element (1).
     To the right of 1 there is 0 smaller element.
 
-
 * Brutal Force
 
 ```java
+
 public List<Integer> countSmaller(int[] nums) {
     int[] result = new int[nums.length];
     for(int i = nums.length-2; i >= 0; i--) {
@@ -37,6 +37,51 @@ public List<Integer> countSmaller(int[] nums) {
 
 ```
 
+* MergeSort
+
+```java
+class Solution {
+    int[] result;
+    public List<Integer> countSmaller(int[] nums) {
+        result = new int[nums.length];
+        int[][] iv = new int[nums.length][2];
+        for(int i = 0; i < nums.length; i++) {
+            iv[i][0] = i;
+            iv[i][1] = nums[i];
+        }
+        mergeSort(iv, 0, nums.length-1);
+        List<Integer> arr = new ArrayList<>();
+        for(int i : result) arr.add(i);
+        return arr;
+    }
+
+    public void mergeSort(int[][] iv, int start, int end) {
+        if(start >= end) return;
+        int mid = start + (end-start) / 2;
+        mergeSort(iv, start, mid);
+        mergeSort(iv, mid+1, end);
+        int l = start, r = mid+1, i = 0;
+        int[][] temp = new int[end-start+1][2];
+        while(l <= mid && r <= end) {
+            if(iv[r][1] < iv[l][1]) {
+                temp[i] = iv[r++];
+            } else {
+                temp[i] = iv[l++];
+                result[temp[i][0]] += r-mid-1;
+            }
+            i++;
+        }
+        while(r <= end) temp[i++] = iv[r++];
+        while(l <= mid) {
+            temp[i] = iv[l++];
+            result[temp[i][0]] += r-mid-1;
+            i++;
+        }
+        for(int j = 0; j < temp.length; j++)
+            iv[j+start] = temp[j];
+    }
+  }
+```
 
 * TreeMap TLE pass 15/16
 
