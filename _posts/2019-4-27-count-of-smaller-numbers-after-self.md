@@ -2,7 +2,7 @@
 title:  "315. Count of Smaller Numbers After Self"
 date:   2019-4-27 18:37:00 +0930
 categories: Leetcode
-tags: DynamicProgramming Hard
+tags: MergeSort DivideAndConquer BinarySearchTree Hard
 ---
 
 [{{page.title}}](https://leetcode.com/problems/count-of-smaller-numbers-after-self/){:target="_blank"}
