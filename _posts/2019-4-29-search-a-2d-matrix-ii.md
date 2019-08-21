@@ -28,6 +28,28 @@ tags: Medium BinarySearch TwoPointers
 
     Given target = 20, return false.
 
+
+* Divide And Conquer
+
+```java
+
+public boolean searchMatrix(int[][] matrix, int target) {
+    if(matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) return false;
+    return divide(matrix, target, 0, matrix[0].length-1, 0, matrix.length-1);
+}
+public boolean divide(int[][] matrix, int target, int c1, int c2, int r1, int r2) {
+    if(c2 < c1 || r2 < r1) return false;
+    int c = c1 + (c2-c1) / 2, r = r1 + (r2-r1) / 2;
+    if(matrix[r][c] == target) return true;
+    else if(matrix[r][c] > target) {
+        return divide(matrix, target, c1, c-1, r1, r-1) || divide(matrix, target, c, c2, r1, r-1) || divide(matrix, target, c1, c-1, r, r2);
+    } else {
+        return divide(matrix, target, c+1, c2, r+1, r2) || divide(matrix, target, c+1, c2, r1, r) || divide(matrix, target, c1, c, r+1, r2);
+    }
+}
+```
+
+
 * TwoPointers
 
 ```java
