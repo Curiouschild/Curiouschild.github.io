@@ -30,7 +30,30 @@ tags: Easy BinarySearch TwoPointers
         A is sorted in non-decreasing order.
 
 
+* TwoPointers
 
+```java
+public int[] sortedSquares(int[] A) {
+    int[] result = new int[A.length];
+    int k = A.length-1;
+    int l = 0, r = A.length-1;
+    while(l <= r) {
+        int left = Math.abs(A[l]);
+        int right = Math.abs(A[r]);
+        if(left > right) {
+            result[k] = left * left;
+            l++;
+        } else {
+            result[k] = right * right;
+            r--;
+        }
+        k--;
+    }
+    return result;
+}
+```
+
+* The first time I just start search from around 0 ... why have i done that ???
 ```java
 
 public int[] sortedSquares(int[] A) {
