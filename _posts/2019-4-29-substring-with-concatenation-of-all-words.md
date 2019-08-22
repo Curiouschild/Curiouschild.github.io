@@ -1,6 +1,6 @@
 ---
 title:  "30. Substring with Concatenation of All Words"
-date:   2019-4-28 19:43:00 +0930
+date:   2019-4-28 21:43:00 +0930
 categories: Leetcode
 tags: Hard HashMap
 ---
