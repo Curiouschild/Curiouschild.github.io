@@ -2,7 +2,7 @@
 title:  "957. Prison Cells After N Days"
 date:   2019-4-30 13:43:00 +0930
 categories: Leetcode
-tags: Medium HashMap
+tags: Medium HashMap BitManiputlation
 ---
 
 [{{page.title}}](https://leetcode.com/problems/prison-cells-after-n-days/){:target="_blank"}
@@ -52,7 +52,39 @@ tags: Medium HashMap
         cells[i] is in {0, 1}
         1 <= N <= 10^9
 
+* bit manipulation
 
+```java
+public int[] prisonAfterNDays(int[] cells, int N) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+    ArrayList<Integer> arr = new ArrayList<>();
+    int num = 0;
+    for(int i = 0; i <= 7; i++) num ^= (cells[7-i] << i);
+    for(int k = 0; k < N; k++) {
+        int next = 0;
+        for(int j = 1; j <= 6; j++) {
+            int l = (num >> (j+1)) & 1, r = (num >> (j-1)) & 1;
+            if((l ^ r) == 0)
+                next |= (1 << j);
+        }
+        num = next;
+        if(map.containsKey(num)) break;
+        map.put(num, 0);
+        arr.add(num);
+    }
+    System.out.println(arr.size());
+    if(arr.size() < N)
+        num = arr.get((N-1) % arr.size());
+
+    int[] result = new int[8];
+    for(int i = 7; i >= 0; i--) {
+        if(((num >> i) & 1) == 1)
+            result[7-i] = 1;
+    }
+    return result;
+
+}
+```
 
 ```java
 public int[] prisonAfterNDays(int[] cells, int N) {
