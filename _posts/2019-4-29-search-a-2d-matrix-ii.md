@@ -1,6 +1,6 @@
 ---
 title:  "240. Search a 2D Matrix II"
-date:   2019-4-28 11:18:00 +0930
+date:   2019-4-29 11:18:00 +0930
 categories: Leetcode
 tags: Medium BinarySearch TwoPointers
 ---

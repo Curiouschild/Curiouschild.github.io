@@ -1,6 +1,6 @@
 ---
 title:  "785. Is Graph Bipartite?"
-date:   2019-4-28 18:58:00 +0930
+date:   2019-4-29 18:58:00 +0930
 categories: Leetcode
 tags: Medium Graph BFS
 ---

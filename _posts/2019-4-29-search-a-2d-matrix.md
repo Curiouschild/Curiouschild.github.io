@@ -1,6 +1,6 @@
 ---
 title:  "74. Search a 2D Matrix"
-date:   2019-4-28 10:48:00 +0930
+date:   2019-4-29 10:48:00 +0930
 categories: Leetcode
 tags: Medium BinarySearch
 ---

@@ -1,8 +1,8 @@
 ---
 title:  "415. Add Strings"
-date:   2019-4-28 19:43:00 +0930
+date:   2019-4-29 19:43:00 +0930
 categories: Leetcode
-tags: Easy Math String
+tags: Easy Math
 ---
 
 [{{page.title}}](https://leetcode.com/problems/add-strings/){:target="_blank"}

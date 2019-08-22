@@ -1,6 +1,6 @@
 ---
 title:  "71. Simplify Path"
-date:   2019-4-28 19:22:00 +0930
+date:   2019-4-29 19:22:00 +0930
 categories: Leetcode
 tags: Medium String
 ---

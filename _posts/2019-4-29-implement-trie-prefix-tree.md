@@ -1,11 +1,11 @@
 ---
 title:  "69. Sqrt(x)"
-date:   2019-4-28 19:43:00 +0930
+date:   2019-4-29 23:17:00 +0930
 categories: Leetcode
-tags: Easy Math BinarySearch
+tags: Medium Tier String
 ---
 
-[{{page.title}}](https://leetcode.com/problems/sqrtx/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/implement-trie-prefix-tree/){:target="_blank"}
 
 
 

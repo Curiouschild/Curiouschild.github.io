@@ -1,6 +1,6 @@
 ---
 title:  "539. Minimum Time Difference"
-date:   2019-4-28 21:09:00 +0930
+date:   2019-4-29 21:09:00 +0930
 categories: Leetcode
 tags: Medium Array
 ---

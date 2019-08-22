@@ -1,6 +1,6 @@
 ---
 title:  "304. Range Sum Query 2D - Immutable"
-date:   2019-4-28 23:59:00 +0930
+date:   2019-4-29 23:59:00 +0930
 categories: Leetcode
 tags: Medium Design
 ---
