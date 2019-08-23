@@ -5,7 +5,7 @@ categories: Leetcode
 tags: Medium DynamicProgramming
 ---
 
-[{{page.title}}](https://leetcode.com/problems/squares-of-a-sorted-array/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/){:target="_blank"}
 
     Say you have an array for which the ith element is the price of a given stock on day i.
 
