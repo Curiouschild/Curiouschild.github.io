@@ -15,6 +15,11 @@ amount. If that amount of money cannot be made up by any combination of the coin
 
 * Bottom Up
 
+i:coin j:amount
+dp[i][j] = Math.min(dp[i-1][j], dp[i][j-coins[i]]+1)
+--> reduce a dimension to
+dp[j] = Math.min(dp[j] + dp[j-coins[i]]+1)
+
 ```java
 public int coinChange(int[] coins, int amount) {
     int[] dp = new int[amount+1];

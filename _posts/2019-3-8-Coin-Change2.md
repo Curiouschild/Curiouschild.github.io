@@ -23,6 +23,8 @@ tags: Knapsack DynamicProgramming
 
 * Bottom Up
 
+https://leetcode.com/problems/coin-change-2/discuss/99212/
+
 ```java
 public int change(int amount, int[] coins) {
     int[] dp = new int[amount + 1];
