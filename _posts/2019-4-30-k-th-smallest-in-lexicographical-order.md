@@ -26,15 +26,21 @@ tags: Hard DenaryTree TwoPointers
 
 * My brutal force solution fail to pass. TLE 40/69
 
-This solutions is damn brilliant:
-Count the number of elements in a sub tree --> cnt.
+The solution below is damn brilliant:
+    Count the number of elements in a sub tree --> cnt.
 
-if cnt > target:
-  the target is in current subtree
-  dive into this tree by num *= 10
-else
-  the target is in the neighbors subtrees
-  move to the next subtree by num++
+    if cnt > target:
+
+      // the target is in current subtree
+
+      dive into this tree by: num *= 10
+
+    else
+
+      // the target is in the neighbors subtrees
+
+      move to the next subtree by: num++
+
 
 Note elements on the same level are consecutive increasing!!
 
