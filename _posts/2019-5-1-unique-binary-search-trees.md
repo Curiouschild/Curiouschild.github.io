@@ -25,6 +25,9 @@ tags: Medium DynamicProgramming Math
 The key is the sequence N1,N2,N3,N4,...,NM has the same number of tree combination with the sequences
 1,2,3,4,...,M. So we can break this problem down to smaller problems.
 
+Also mathematically this problem is to calculate a Catalan number.
+C = C * 2 * (2 * i + 1) / (i + 2)
+
 * Top Down
 
 ```java
