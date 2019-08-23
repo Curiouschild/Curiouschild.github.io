@@ -5,56 +5,60 @@ categories: Leetcode
 tags: Medium DynamicProgramming
 ---
 
-[{{page.title}}](https://leetcode.com/problems/squares-of-a-sorted-array/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/valid-sudoku/){:target="_blank"}
 
-    Say you have an array for which the ith element is the price of a given stock on day i.
+    Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the
+    following rules:
 
-    Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times) with the following restrictions:
-
-        You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
-        After you sell your stock, you cannot buy stock on next day. (ie, cooldown 1 day)
-
-    Example:
-
-    Input: [1,2,3,0,2]
-    Output: 3
-    Explanation: transactions = [buy, sell, cooldown, buy, sell]
+        Each row must contain the digits 1-9 without repetition.
+        Each column must contain the digits 1-9 without repetition.
+        Each of the 9 3x3 sub-boxes of the grid must contain the digits 1-9 without repetition.
 
 
-* DP
+    A partially filled sudoku which is valid.
 
-buy[i] : Maximum profit which end with buying on day i or end
-with buying on a day before i and takes rest until the day i since then.
+    The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
 
-sell[i] : Maximum profit which end with selling on day i or end
-with selling on a day before i and takes rest until the day i since then.
+    Example 1:
+
+    Input:
+    [
+      ["5","3",".",".","7",".",".",".","."],
+      ["6",".",".","1","9","5",".",".","."],
+      [".","9","8",".",".",".",".","6","."],
+      ["8",".",".",".","6",".",".",".","3"],
+      ["4",".",".","8",".","3",".",".","1"],
+      ["7",".",".",".","2",".",".",".","6"],
+      [".","6",".",".",".",".","2","8","."],
+      [".",".",".","4","1","9",".",".","5"],
+      [".",".",".",".","8",".",".","7","9"]
+    ]
+    Output: true
+
 
 ```java
-public int maxProfit(int[] p) {
-    if(p.length == 0) return 0;
-    int[] sell = new int[p.length], buy = new int[p.length];
-    buy[0] = -p[0];
-    for(int i = 1; i < p.length; i++) {
-        sell[i] = Math.max(sell[i-1], buy[i-1]+p[i]);
-        buy[i] = Math.max(buy[i-1], (i-2 >= 0 ? sell[i-2] : 0)-p[i]);
+HashSet[] cols = new HashSet[9], rows = new HashSet[9], subs = new HashSet[9];
+public boolean isValidSudoku(char[][] board) {
+    for(int i = 0; i < 9; i++) {
+        cols[i] = new HashSet<Character>();
+        rows[i] = new HashSet<Character>();
+        subs[i] = new HashSet<Character>();
     }
-    return sell[sell.length-1];
+    for(int i = 0; i < board.length; i++) {
+        for(int j = 0; j < board.length; j++) {
+            int subKey = toKey(i, j);
+            char v = board[i][j];
+            if(v == '.') continue;
+            if(cols[j].contains(v) || rows[i].contains(v) || subs[subKey].contains(v))
+                return false;
+            cols[j].add(v);
+            rows[i].add(v);
+            subs[subKey].add(v);
+        }
+    }
+    return true;
 }
-```
-
-* Space Optimized
-
-```java
-public int maxProfit(int[] prices) {
-    if(prices.length == 0) return 0;
-    int s = 0, s1 = 0, s2 = 0, b = 0, b1 = -prices[0];
-    for(int p : prices) {
-        s = Math.max(s1, b1 + p);
-        b = Math.max(b1, s2 - p);
-        s2 = s1;
-        s1 = s;
-        b1 = b;
-    }
-    return s;
+public int toKey(int i, int j) {
+    return i / 3 * 3 + j / 3;
 }
 ```
