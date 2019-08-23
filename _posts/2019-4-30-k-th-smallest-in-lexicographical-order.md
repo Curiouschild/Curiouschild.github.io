@@ -26,6 +26,8 @@ tags: Hard DenaryTree TwoPointers
 
 * My brutal force solution fail to pass. TLE 40/69
 
+The solution set is a denary tree 
+
 The solution below is damn brilliant:
     Count the number of elements in a sub tree --> cnt.
 
