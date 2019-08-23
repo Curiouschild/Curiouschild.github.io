@@ -22,7 +22,10 @@ tags: Medium DynamicProgramming Math
         /     /       \                 \
        2     1         2                 3
 
+The key is the sequence N1,N2,N3,N4,...,NM has the same number of tree combination with the sequences
+1,2,3,4,...,M. So we can break this problem down to smaller problems.
 
+* Top Down
 
 ```java
 class Solution {
@@ -40,5 +43,21 @@ class Solution {
         dp[n] = result;
         return result;
     }
+}
+```
+
+* Bottom Up
+
+```java
+public int numTrees(int n) {
+    int[] dp = new int[n+1];
+    dp[0] = 1;
+    dp[1] = 1;
+    for(int i = 2; i <= n; i++) {
+        for(int j = 1; j <= i; j++) {
+            dp[i] += dp[j-1] * dp[i-j];
+        }
+    }
+    return dp[n];
 }
 ```
