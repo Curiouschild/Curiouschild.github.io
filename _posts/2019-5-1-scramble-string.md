@@ -59,6 +59,13 @@ tags: Hard DivideAndConquer
     Output: false
 
 
+Here is a iterative DP solution
+https://leetcode.com/problems/scramble-string/discuss/29396/Simple-iterative-DP-Java-solution-with-explanation
+
+for some 1 <= q < k we have:
+  F(i, j, k) = (F(i, j, q) AND F(i + q, j + q, k - q)) OR (F(i, j + k - q, q) AND F(i + q, j, k - q))
+
+* Recursive
 
 ```java
 class Solution {
