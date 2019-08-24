@@ -1,11 +1,11 @@
 ---
-title:  "309. Best Time to Buy and Sell Stock with Cooldown"
-date:   2019-05-01 10:22:00 +0930
+title:  "787. Cheapest Flights Within K Stops"
+date:   2019-05-01 23:59:00 +0930
 categories: Leetcode
-tags: Medium DFS
+tags: Medium DFS Graph Dijkstra
 ---
 
-[{{page.title}}](https://leetcode.com/problems/valid-sudoku/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/cheapest-flights-within-k-stops/){:target="_blank"}
 
     There are n cities connected by m flights. Each fight starts from city u and arrives at v with a price w.
 
@@ -74,6 +74,28 @@ public int findCheapestPriceFailed(int n, int[][] flights, int src, int dst, int
         }
     }
     return costs[dst] == Integer.MAX_VALUE ? -1 : costs[dst];
+}
+```
+
+* Finally I get the correct solution. The key is put all the related information (steps, total costs, and stop id) into the pq
+
+```java
+
+public int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
+    ArrayList<int[]>[] to = new ArrayList[n]; // adjacent list: src -> (dsts and costs)s
+    for(int i = 0; i < n; i++) to[i] = new ArrayList<int[]>();
+    for(int[] f : flights) to[f[0]].add(new int[] {f[1], f[2]});
+    PriorityQueue<int[]> q = new PriorityQueue<>((x,y)->(x[2]-y[2]));
+    q.offer(new int[] {src, 0, 0});
+    while(!q.isEmpty()) {
+        int[] curr = q.poll();
+        if(curr[0] == dst) return curr[2];
+        if(curr[1] > K) continue;
+        for(int[] next : to[curr[0]]) { // next: {nextStop, cost of the edge}
+            q.offer(new int[]{next[0], 1+curr[1], next[1]+curr[2]});
+        }
+    }
+    return -1;
 }
 ```
 
