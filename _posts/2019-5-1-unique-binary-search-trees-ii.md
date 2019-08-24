@@ -36,7 +36,7 @@ class Solution {
         if(n == 0) return new ArrayList<>();
         return generate(1, n);
     }
-    
+
     public List<TreeNode> generate(int l, int r) {
         List<TreeNode> result = new ArrayList<TreeNode>();
         if(l > r) result.add(null);
