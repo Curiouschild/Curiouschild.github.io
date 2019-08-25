@@ -71,3 +71,39 @@ class PhoneDirectory {
     }
 }
 ```
+
+* A late adding version
+
+```java
+class PhoneDirectory {
+    HashSet<Integer> released = new HashSet<>();
+    int p;
+    int max;
+    /** Initialize your data structure here
+        @param maxNumbers - The maximum numbers that can be stored in the phone directory. */
+    public PhoneDirectory(int maxNumbers) {
+        max = maxNumbers;
+    }
+
+    /** Provide a number which is not assigned to anyone.
+        @return - Return an available number. Return -1 if none is available. */
+    public int get() {
+        if(released.isEmpty() && p == max) return -1;
+        if(released.isEmpty()) return p++;
+        int v = released.iterator().next();
+        released.remove(v);
+        return v;
+    }
+
+    /** Check if a number is available or not. */
+    public boolean check(int number) {
+        return number >= p || released.contains(number);
+    }
+
+    /** Recycle or release a number. */
+    public void release(int number) {
+        if(number > p-1) return;
+        released.add(number);
+    }
+}
+```
