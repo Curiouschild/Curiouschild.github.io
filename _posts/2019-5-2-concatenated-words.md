@@ -31,7 +31,9 @@ tags: Hard Tier
 
 * Two heaps is a good friend of median of streaming data
 
-Bug when tring to add memo pad
+Adding a memo pad made the code even slower... cleared the map every iteration
+
+Another approach is DP, the same as Word Break
 
 ```java
 class Solution {
@@ -85,4 +87,34 @@ class Solution {
         String w;
     }
   }
+```
+
+* DP
+
+```java
+public List<String> findAllConcatenatedWordsInADict(String[] words) {
+    HashSet<String> set = new HashSet<>();
+    for(String w : words) set.add(w);
+    ArrayList<String> result = new ArrayList<>();
+    for(String w : words) {
+        set.remove(w);
+        if(wordBreak(set, w)) result.add(w);
+        set.add(w);
+    }
+    return result;
+}
+
+public boolean wordBreak(HashSet<String> set, String s) {
+    if(s.length() == 0) return false;
+    boolean[] dp = new boolean[s.length()+1];
+    dp[0] = true;
+    for(int i = 1; i <= s.length(); i++) {
+        for(int j = 0; j < i; j++) {
+            if(dp[j] && set.contains(s.substring(j,i)))
+                dp[i] = true;
+            if(dp[i]) break;
+        }
+    }
+    return dp[s.length()];
+}
 ```
