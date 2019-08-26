@@ -7,7 +7,7 @@ tags: Easy String Palindrome
 
 [{{page.title}}](https://leetcode.com/problems/boundary-of-binary-tree/){:target="_blank"}
 
-    Given a binary tree, return the values of its boundary in anti-clockwise direction starting from root. 
+    Given a binary tree, return the values of its boundary in anti-clockwise direction starting from root.
     Boundary includes left boundary, leaves, and right boundary in order without duplicate nodes.  (The values
     of the nodes may still be duplicates.)
 
@@ -63,9 +63,12 @@ tags: Easy String Palindrome
     So order them in anti-clockwise without duplicate nodes we have [1,2,4,7,8,9,10,6,3].
 
 
+
 * A fast coded answer
 
 Searching for leftmost and rightmost and leaves are overlapped, so i'll try to optimize the solution. Hope to solve it with one pass inorder traverse
+
+A State Machine solution is also feasible, here are four states: on left boundary, right boundary, leaves, internal nodes.
 
 ```java
 class Solution {
