@@ -47,6 +47,8 @@ tags: Hard Interval
 
 * the comparator is kind of tricky, but building a linkedlist of intervals is also troublesome
 
+The main logic is the same with Merge K sorted LinkedList
+
 ```java
 class Solution {
     // merge intervals
