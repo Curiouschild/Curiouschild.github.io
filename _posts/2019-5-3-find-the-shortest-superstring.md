@@ -5,7 +5,7 @@ categories: Leetcode
 tags: Hard Graph ShortestPath
 ---
 
-[{{page.title}}](https://leetcode.com/problems/valid-palindrome-ii/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/find-the-shortest-superstring/){:target="_blank"}
 
     Given an array A of strings, find any smallest string that contains each string in A as a substring.
 
@@ -34,6 +34,8 @@ The answer is the shortest/longest distance of a weighted directed graph...
 Each String can be regarded as a node, and the overlapped length are the reward of edges
 
 * A fast coded TLE version 58 / 72 test cases passed.
+
+TODO: A iterative DP Solution
 
 ```java
 class Solution {
