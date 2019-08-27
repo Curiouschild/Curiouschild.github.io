@@ -55,6 +55,8 @@ tags: Medium Stack String
 
 * Stack stores the length of dirs. len is the curr length of absolute path
 
+A slower but easy to code approach is to preprocess the data by spliting intput by \n
+
 ```java
 public int lengthLongestPath(String input) {
     Stack<Integer> stack = new Stack<>();
