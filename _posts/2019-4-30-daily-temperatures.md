@@ -5,7 +5,7 @@ categories: Leetcode
 tags: Medium MonotonicStack
 ---
 
-[{{page.title}}](https://leetcode.com/problems/squares-of-a-sorted-array/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/daily-temperatures/){:target="_blank"}
 
     Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how
     many days you would have to wait until a warmer temperature. If there is no future day for which this is

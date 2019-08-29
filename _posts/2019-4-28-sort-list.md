@@ -19,8 +19,8 @@ tags: Medium LinkedList
     Input: -1->5->3->4->0
     Output: -1->0->3->4->5
 
-    
-* Iterative MergeSort
+
+* Iterative MergeSort Strict O(1) space
 
 ```java
 public ListNode sortList(ListNode head) {

@@ -1,84 +1,49 @@
 ---
-title:  "29. Divide Two Integers"
-date:   2019-4-28 10:36:00 +0930
+title:  "244. Shortest Word Distance II"
+date:   2019-4-28 22:01:00 +0930
 categories: Leetcode
-tags: Medium BitManiputlation
+tags: Medium TwoPointers
 ---
 
-[{{page.title}}](https://leetcode.com/problems/divide-two-integers/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/shortest-word-distance-ii/){:target="_blank"}
 
 
-    Given two integers dividend and divisor, divide two integers without using multiplication, division and mod
-    operator.
+    Design a class which receives a list of words in the constructor, and implements a method that takes two words word1 and word2 and return the shortest distance between these two words in the list. Your method will be called repeatedly many times with different parameters.
 
-    Return the quotient after dividing dividend by divisor.
+    Example:
+    Assume that words = ["practice", "makes", "perfect", "coding", "makes"].
 
-    The integer division should truncate toward zero.
-
-    Example 1:
-
-    Input: dividend = 10, divisor = 3
+    Input: word1 = “coding”, word2 = “practice”
     Output: 3
 
-    Example 2:
-
-    Input: dividend = 7, divisor = -3
-    Output: -2
+    Input: word1 = "makes", word2 = "coding"
+    Output: 1
 
     Note:
+    You may assume that word1 does not equal to word2, and word1 and word2 are both in the list.
 
-        Both dividend and divisor will be 32-bit signed integers.
-        The divisor will never be 0.
-        Assume we are dealing with an environment which could only store integers within the 32-bit signed
-        integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 231
-        − 1 when the division result overflows.
-
-* Bit
-
-Subtract from the most significant bits and accumulates the quotient
 
 ```java
-public int divide(int dividend, int divisor) {
-    boolean neg = (dividend ^ divisor) < 0;
-    long x = dividend > 0 ? dividend : -(long)dividend, y = divisor > 0 ? divisor : -(long)divisor;
-
-    long quotient = 0;
-    while(x >= y) {
-        long move = 1, temp = y;
-        while((temp << 1) <= x) {
-            move = move << 1;
-            temp = temp << 1;
+class WordDistance {
+    HashMap<String, ArrayList<Integer>> map = new HashMap<>();
+    public WordDistance(String[] words) {
+        for(int i = 0; i < words.length; i++) {
+            String s = words[i];
+            ArrayList<Integer> arr = map.getOrDefault(s, new ArrayList<Integer>());
+            arr.add(i);
+            map.put(s, arr);
         }
-        x -= temp;
-        quotient += move;
     }
 
-    quotient = !neg ? quotient : ~(quotient-1);
-    if(quotient >= Integer.MAX_VALUE) return Integer.MAX_VALUE;
-    if(quotient <= Integer.MIN_VALUE) return Integer.MIN_VALUE;
-    return (int)quotient;
-}
-```
-
-Add and Multiply
-subtract is to negate ~(ADD(a, -1))
-```java
-
-public int add(int a, int b) {
-    if(a == 0) return b;
-    int aa = (a & b) << 1;
-    int bb = a ^ b;
-    return add(aa, bb);
-}
-public int multiply(int a, int b) {
-    if(a < 0) {
-        a = -a;
-        b = -b;
+    public int shortest(String word1, String word2) {
+        int x = 0, y = 0, result = Integer.MAX_VALUE;
+        ArrayList<Integer> a = map.get(word1), b = map.get(word2);
+        while(x < a.size() && y < b.size()) {
+            result = Math.min(result, Math.abs(a.get(x)-b.get(y)));
+            if(a.get(x) < b.get(y)) x++;
+            else y++;
+        }
+        return result;
     }
-    if(a == 1) return b;
-    int aa = a >> 1;
-    int bb = b << 1;
-    int m = multiply(aa, bb);
-    return (a & 1) == 1 ? add(m, b) : m;
 }
 ```

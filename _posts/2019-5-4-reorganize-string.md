@@ -22,10 +22,7 @@ tags: Medium Sorting
     Output: ""
 
     Note:
-
         S will consist of lowercase letters and have length in range [1, 500].
-
-
 
 * Similar to CPU cool down time
 

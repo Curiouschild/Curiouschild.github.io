@@ -25,6 +25,11 @@ tags: Knapsack DynamicProgramming
 
 https://leetcode.com/problems/coin-change-2/discuss/99212/
 
+i:coin j:amount
+dp[i][j] = dp[i-1][j] + dp[i][j-coins[i]]
+--> reduce a dimension to
+dp[j] = dp[j] + dp[j-coins[i]]
+
 ```java
 public int change(int amount, int[] coins) {
     int[] dp = new int[amount + 1];
