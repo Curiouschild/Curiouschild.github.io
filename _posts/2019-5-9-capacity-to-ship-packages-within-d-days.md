@@ -2,7 +2,7 @@
 title:  "1011. Capacity To Ship Packages Within D Days"
 date:   2019-05-09 08:32:00 +0930
 categories: Leetcode
-tags: Hard DynamicProgramming BinarySearch
+tags: Medium DynamicProgramming BinarySearch
 ---
 
 [{{page.title}}](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/){:target="_blank"}
@@ -12,8 +12,6 @@ tags: Hard DynamicProgramming BinarySearch
     The i-th package on the conveyor belt has a weight of weights[i].  Each day, we load the ship with packages on the conveyor belt (in the order given by weights). We may not load more weight than the maximum weight capacity of the ship.
 
     Return the least weight capacity of the ship that will result in all the packages on the conveyor belt being shipped within D days.
-
-
 
     Example 1:
 
