@@ -1,57 +1,52 @@
 ---
-title:  "163. Missing Ranges"
-date:   2019-05-09 09:46:00 +0930
+title:  "300. Longest Increasing Subsequence"
+date:   2019-05-09 15:28:00 +0930
 categories: Leetcode
 tags: Medium Array
 ---
 
-[{{page.title}}](https://leetcode.com/problems/missing-ranges/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/longest-increasing-subsequence/){:target="_blank"}
 
-* A better solution, shrink lower boundary
+    Given an unsorted array of integers, find the length of longest increasing subsequence.
+
+    Example:
+
+    Input: [10,9,2,5,3,7,101,18]
+    Output: 4
+    Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
+
+    Note:
+
+        There may be more than one LIS combination, it is only necessary for you to return the length.
+        Your algorithm should run in O(n2) complexity.
+
+    Follow up: Could you improve it to O(n log n) time complexity?
+
+
+* Binary Search DP
+
 ```java
-public List<String> findMissingRanges(int[] nums, int lower, int upper) {
-     List<String> list = new ArrayList<String>();
-     long l = lower;
-     for(int n : nums){
-         long justBelow = (long)n - 1;
-         if(l == justBelow) list.add(l+"");
-         else if(l < justBelow) list.add(l + "->" + justBelow);
-         l = (long)n+1;
-     }
-     if(l == upper) list.add(l+"");
-     else if(l < upper) list.add(l + "->" + upper);
-     return list;
- }
- ```
-
-* My Trival solution
-
-```java
-public List<String> findMissingRanges(int[] nums, int lower, int upper) {
-
-    List<String> result = new ArrayList<>();
-    int l = 0, r = nums.length;
-    int start = 0, end = nums.length-1;
-    while(start < nums.length && nums[start] < lower) start++;
-    while(end >= 0 && nums[end] > upper) end--;
-    if(start > end) {
-        if(upper == lower) result.add("" + upper);
-        else result.add(lower+"->"+upper);
-        return result;
-    }
-
-    if((long)nums[start]-lower == 1) result.add(lower+"");
-    else if((long)nums[start]-lower > 1) result.add(lower + "->" + ((long)nums[start]-1));
-
-    for(int i = start; i < end; i++) {
-        if((long)nums[i]+2 == nums[i+1]) {
-            result.add(nums[i]+1+"");
-        } else if((long)nums[i+1]-(long)nums[i] > 2) {
-            result.add((long)nums[i]+1 + "->" + ((long)nums[i+1]-1));
+public int lengthOfLIS(int[] nums) {
+    if(nums.length == 0) return 0;
+    int[] dp = new int[nums.length];
+    dp[0] = nums[0];
+    int len = 1;
+    for(int i = 1; i < nums.length; i++) {
+        // first greater than nums[i]
+        int l = 0, r = len;
+        while(l < r) {
+            int mid = l + (r-l) / 2;
+            if(dp[mid] >= nums[i])
+                r = mid;
+            else
+                l = mid + 1;
+        }
+        if(l == len) {
+            dp[len++] = nums[i];
+        } else {
+            dp[l] = nums[i];
         }
     }
-    if(nums[end] == (long)upper-1) result.add(upper+"");
-    else if(nums[end] < upper-1) result.add((long)nums[end]+1 + "->" + (upper));
-    return result;
+    return len;
 }
 ```
