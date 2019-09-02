@@ -16,6 +16,9 @@ tags: PriorityQueue Sort
     Input: [[0, 30],[5, 10],[15, 20]]
     Output: 2
 
+
+Consider a ended room first when trying to start a new meeting.
+
 * PriorityQueue
 
 ```java
