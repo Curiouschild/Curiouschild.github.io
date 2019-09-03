@@ -32,7 +32,7 @@ tags: Medium Tree
     The node with value 20 occurs at position (1, -1);
     The node with value 7 occurs at position (2, -2).
 
-
+![img1](/img/posts/vertical-order-traversal-of-a-binary-tree-1.png)
 
 * Sorting
 
