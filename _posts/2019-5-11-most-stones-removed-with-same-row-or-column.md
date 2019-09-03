@@ -73,3 +73,44 @@ class UnionFind {
     }
 }
 ```
+
+* DFS
+
+```java
+
+public int removeStones(int[][] stones) {
+    ArrayList<int[]>[] xs = new ArrayList[10000], ys = new ArrayList[10000];
+    for(int[] s : stones) {
+        int x = s[0], y = s[1];
+        if(xs[x] == null) xs[x] = new ArrayList<>();
+        if(ys[y] == null) ys[y] = new ArrayList<>();
+        xs[x].add(s);
+        ys[y].add(s);
+    }
+    HashSet<int[]> visited = new HashSet<int[]>();
+    int cnt = 0;
+    for(int[] s : stones) {
+        if(!visited.contains(s)) {
+            cnt++;
+            visited.add(s);
+            mark(s, visited, xs, ys);
+        }
+    }
+    return stones.length - cnt;
+}
+public void mark(int[] curr, HashSet<int[]> visited, ArrayList<int[]>[] xs, ArrayList<int[]>[] ys) {
+    int x = curr[0], y = curr[1];
+    for(int[] neighbor : xs[x]) {
+        if(!visited.contains(neighbor)) {
+            visited.add(neighbor);
+            mark(neighbor, visited, xs, ys);
+        }
+    }
+    for(int[] neighbor : ys[y]) {
+        if(!visited.contains(neighbor)) {
+            visited.add(neighbor);
+            mark(neighbor, visited, xs, ys);
+        }
+    }
+}
+```
