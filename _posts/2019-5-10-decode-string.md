@@ -30,6 +30,7 @@ tags: Medium Recursive Stack
 Another approach is to use stack.
 
 ```java
+
 public String decodeString(String s) {
     if(!s.contains("[")) return s;
     int repeat = 0;
@@ -56,5 +57,37 @@ public String decodeString(String s) {
         }
     }
     return result;
+}
+```
+
+* Stack
+
+```java
+public String decodeString(String s) {
+    Stack<String> stack = new Stack<>();
+    String res = "";
+
+    for(int i = 0; i < s.length(); i++) {
+        if(Character.isDigit(s.charAt(i))) { // push the previous string and num for the next string into the stack
+            String num = "";
+            while(Character.isDigit(s.charAt(i))) {
+                num += s.charAt(i++);
+            }
+            stack.push(res);
+            stack.push(num);
+            res = "";
+        } else if(s.charAt(i) == '[') {
+            // do nothing
+        } else if(s.charAt(i) == ']') {
+            int mul = Integer.valueOf(stack.pop()); // num for the current string
+            String pre = stack.pop(); // previous string
+            StringBuilder sb = new StringBuilder(pre); // add privous string
+            while(mul-->0) sb.append(res); // multiply current string
+            res = sb.toString();
+        } else {
+            res += s.charAt(i);
+        }
+    }
+    return res;
 }
 ```
