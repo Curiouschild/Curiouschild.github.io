@@ -23,7 +23,6 @@ tags: Medium PriorityQueue MST Graph
 ![img](/img/posts/network-delay-time.png)
 
     Note:
-
         N will be in the range [1, 100].
         K will be in the range [1, N].
         The length of times will be in the range [1, 6000].
