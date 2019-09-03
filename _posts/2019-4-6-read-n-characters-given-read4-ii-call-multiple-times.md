@@ -84,6 +84,32 @@ tags: DataStructure API
         It is guaranteed that in a given test case the same buffer buf is called by read.
 
 
+* Consume the buffer array first. If it runs out, break, else refill the buffer.
+
+```java 
+
+public class Solution extends Reader4 {
+    char[] buffer = new char[4];
+    int len = 0;
+    int p = 0;
+    public int read(char[] buf, int n) {
+        int cnt = 0;
+        int i = 0;
+        while(cnt < n) {
+            while(p < len && cnt < n) {
+                buf[i++] = buffer[p++];
+                cnt++;
+            }
+            if(p < len) break;
+            int temp = read4(buffer);
+            if(temp == 0) break;
+            len = temp;
+            p = 0;
+        }
+        return cnt;
+    }
+}
+```
 
 ```java
 
