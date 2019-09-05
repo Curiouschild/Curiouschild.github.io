@@ -27,6 +27,23 @@ public int maxSubArrayBrutal(int[] nums) {
 ```
 2. One Pass
 
+Key: Is i the index to start a new sum?
+
+```java
+
+public int maxSubArray(int[] nums) {
+    int result = nums[0], sum = result;
+    for(int i = 1; i < nums.length; i++) {
+        sum += nums[i];
+        if(sum < nums[i]) {
+            sum = nums[i];
+        }
+        result = Math.max(result, sum);
+    }
+    return result;
+}
+```
+
 ```java
 public int maxSubArray(int[] nums) {
     int result = Integer.MIN_VALUE, sum = 0;
