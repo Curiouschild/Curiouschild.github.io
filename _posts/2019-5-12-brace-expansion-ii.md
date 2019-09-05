@@ -17,7 +17,7 @@ tags: Hard String
             R("w") = {"w"}
         When we take a comma delimited list of 2 or more expressions, we take the union of possibilities.
             R("{a,b,c}") = {"a","b","c"}
-            R("{{a,b},{b,c}}") = {"a","b","c"} (notice the final set only contains each word at most once)
+            R("{ {a,b},{b,c} }") = {"a","b","c"} (notice the final set only contains each word at most once)
         When we concatenate two expressions, we take the set of possible concatenations between two words
         where the first word comes from the first expression and the second word comes from the second
         expression.
@@ -36,12 +36,12 @@ tags: Hard String
 
     Example 1:
 
-    Input: "{a,b}{c,{d,e}}"
+    Input: "{a,b}{c,{d,e} }"
     Output: ["ac","ad","ae","bc","bd","be"]
 
     Example 2:
 
-    Input: "{{a,z},a{b,c},{ab,z}}"
+    Input: "{ {a,z},a{b,c},{ab,z} }"
     Output: ["a","ab","ac","z"]
     Explanation: Each distinct word is written only once in the final answer.
 
@@ -134,7 +134,7 @@ public boolean isAdd(String s) {
         if(lc > 0 && rc == lc && i < s.length()-1)  // {}{}{}
             return false;
     }
-    return true; // {{},sdf{},sfd{}{}}
+    return true; // { {},sdf{},sfd{}{} }
 }
 
 public void add(ArrayList<HashSet<String>> temp, HashSet<String> result) {
