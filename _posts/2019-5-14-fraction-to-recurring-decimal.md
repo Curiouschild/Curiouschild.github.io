@@ -1,6 +1,6 @@
 ---
 title:  "166. Fraction to Recurring Decimal"
-date:   2019-05-13 10:29:00 +0930
+date:   2019-05-14 10:29:00 +0930
 categories: Leetcode
 tags: Medium Math
 ---
@@ -25,8 +25,6 @@ tags: Medium Math
 
     Input: numerator = 2, denominator = 3
     Output: "0.(6)"
-
-
 
 ```java
 
