@@ -23,8 +23,14 @@ public int maxProfit(int[] prices) {
         profits[i] = prices[i+1] - prices[i];
     int sum = 0, max = Integer.MIN_VALUE;
     for(int profit : profits) {
-        sum = sum + profit < 0 ? 0 : sum + profit;
-        max = profit < 0 ? Math.max(profit, max) : Math.max(sum, max);
+        // sum = sum + profit < 0 ? 0 : sum + profit;
+        // max = profit < 0 ? Math.max(profit, max) : Math.max(sum, max);
+        if(sum < 0) {
+            sum = profit;
+        } else {
+            sum += profit;
+        }
+        max = Math.max(max, sum);
     }
     return max < 0 ? 0 : max;
 }
