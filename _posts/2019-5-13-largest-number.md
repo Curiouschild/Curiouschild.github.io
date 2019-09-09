@@ -1,8 +1,8 @@
 ---
-title:  "377. Combination Sum IV"
+title:  "179. Largest Number"
 date:   2019-05-13 11:24:00 +0930
 categories: Leetcode
-tags: Medium Backtrack
+tags: Medium String
 ---
 
 [{{page.title}}](https://leetcode.com/problems/largest-number/){:target="_blank"}
