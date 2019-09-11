@@ -1,8 +1,8 @@
 ---
-title:  "309. Best Time to Buy and Sell Stock with Cooldown"
+title:  "36. Valid Sudoku"
 date:   2019-05-01 10:22:00 +0930
 categories: Leetcode
-tags: Medium DynamicProgramming
+tags: Medium Matrix
 ---
 
 [{{page.title}}](https://leetcode.com/problems/valid-sudoku/){:target="_blank"}
