@@ -2,7 +2,7 @@
 title:  "251. Flatten 2D Vector"
 date:   2019-05-18 19:28:00 +0930
 categories: Leetcode
-tags: Medium TwoPointer Iterator
+tags: Medium TwoPointer
 ---
 
 [{{page.title}}](https://leetcode.com/problems/flatten-2d-vector/){:target="_blank"}
