@@ -1,6 +1,6 @@
 ---
 title:  "251. Flatten 2D Vector"
-date:   2019-05-18 19:28:00 +0930
+date:   2019-05-19 19:28:00 +0930
 categories: Leetcode
 tags: Medium TwoPointer
 ---
@@ -50,7 +50,7 @@ class Vector2D {
     }
 
     public int next() {
-        while(i < nums.length && nums[i].length == 0) i++;
+        hasNext();
         int v = nums[i][j];
         if(j == nums[i].length-1) {
             j = 0;

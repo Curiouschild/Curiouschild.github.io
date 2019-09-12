@@ -1,6 +1,6 @@
 ---
 title:  "1008. Construct Binary Search Tree from Preorder Traversal"
-date:   2019-05-18 20:45:00 +0930
+date:   2019-05-19 20:45:00 +0930
 categories: Leetcode
 tags: Medium Tree Recursive
 ---

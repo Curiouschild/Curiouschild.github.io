@@ -1,6 +1,6 @@
 ---
 title:  "745. Prefix and Suffix Search"
-date:   2019-05-18 16:16:00 +0930
+date:   2019-05-19 16:16:00 +0930
 categories: Leetcode
 tags: Hard Tier
 ---
