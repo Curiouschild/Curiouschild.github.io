@@ -2,7 +2,7 @@
 title:  "384. Shuffle an Array"
 date:   2019-05-20 09:41:00 +0930
 categories: Leetcode
-tags: Medium String Backtrack
+tags: Medium Array
 ---
 
 [{{page.title}}](https://leetcode.com/problems/shuffle-an-array/){:target="_blank"}
