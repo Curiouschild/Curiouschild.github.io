@@ -1,6 +1,6 @@
 ---
 title:  "414. Third Maximum Number"
-date:   2019-05-20 16:42:00 +0930
+date:   2019-05-21 16:42:00 +0930
 categories: Leetcode
 tags: Easy Array
 ---
