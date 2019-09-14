@@ -1,6 +1,6 @@
 ---
 title:  "285. Inorder Successor in BST"
-date:   2019-05-21 16:29:00 +0930
+date:   2019-05-21 18:29:00 +0930
 categories: Leetcode
 tags: Medium Array
 ---
@@ -17,6 +17,29 @@ tags: Medium Array
     Output: 2
     Explanation: 1's in-order successor node is 2. Note that both p and the return value is of TreeNode type.
 
+* Iterative
+
+```java
+
+public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
+    ArrayDeque<TreeNode> stack = new ArrayDeque<>();
+    TreeNode curr = root;
+    int prev = Integer.MAX_VALUE;
+    while(curr != null || !stack.isEmpty()) {
+        while(curr != null) {
+            stack.push(curr);
+            curr = curr.left;
+        }
+        curr = stack.pop();
+        if(prev == p.val) return curr;
+        prev = curr.val;
+        curr = curr.right;
+    }
+    return null;
+}
+```
+
+* Recursive
 
 ```java
 class Solution {
