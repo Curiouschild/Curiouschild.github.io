@@ -28,7 +28,30 @@ tags: Medium Array
         The relative order inside both the even and odd groups should remain as it was in the input.
         The first node is considered odd, the second node even and so on ...
 
+* One pass
+
+```java
+public ListNode oddEvenList(ListNode head) {
+    if(head == null || head.next == null || head.next.next == null) return head;
+    ListNode odd = head, prev = head.next, curr = head.next.next;
+    // prev always even, curr always odd
+    // move curr behind the odd
+    while(curr != null) {
+        prev.next = curr.next;
+        curr.next = odd.next;
+        odd.next = curr;
+        odd = odd.next;
+        prev = prev.next;
+        if(prev == null) break;
+        curr = prev.next;
+    }
+    return head;
+}
+```
+
 * Move odd to left for one step in a single traverse O(N2)
+
+This approach is a trash...
 
 ```java
 public ListNode oddEvenList(ListNode head) {
