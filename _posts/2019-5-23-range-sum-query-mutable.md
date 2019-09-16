@@ -29,6 +29,7 @@ tags: Medium SegmentTree
 My first time to implement the segment tree.
 
 ```java
+
 class NumArray {
     int[] arr;
     int[] nums;
