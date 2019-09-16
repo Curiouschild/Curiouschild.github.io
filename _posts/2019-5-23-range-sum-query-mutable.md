@@ -2,7 +2,7 @@
 title:  "307. Range Sum Query - Mutable"
 date:   2019-05-23 11:34:00 +0930
 categories: Leetcode
-tags: Easy Math
+tags: Medium SegmentTree
 ---
 
 [{{page.title}}](https://leetcode.com/problems/range-sum-query-mutable/){:target="_blank"}
