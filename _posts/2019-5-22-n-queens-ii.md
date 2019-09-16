@@ -5,7 +5,7 @@ categories: Leetcode
 tags: Hard Backtrack NP
 ---
 
-[{{page.title}}](https://leetcode.com/problems/combinations/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/n-queens-ii/){:target="_blank"}
 
     The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.
 

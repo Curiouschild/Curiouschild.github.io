@@ -32,7 +32,9 @@ tags: Medium DivideAndConquer
 
 
 
-* Base conversion
+* Find the invalid characters, and use them to divide the input string.
+
+Original problem can be greedily shrinked into subproblems.
 
 ```java
 public int longestSubstring(String s, int k) {

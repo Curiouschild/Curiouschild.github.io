@@ -21,7 +21,6 @@ tags: Easy Math
     Output: 1
     Explanation: 5! = 120, one trailing zero.
 
-* Easy
 
 ```java
 public int trailingZeroes(int n) {

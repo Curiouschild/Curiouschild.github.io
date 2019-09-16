@@ -5,7 +5,7 @@ categories: Leetcode
 tags: Medium String
 ---
 
-[{{page.title}}](https://leetcode.com/problems/sentence-screen-fitting/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/shortest-way-to-form-string/){:target="_blank"}
 
     From any string, we can form a subsequence of that string by deleting some number of characters (possibly no deletions).
 

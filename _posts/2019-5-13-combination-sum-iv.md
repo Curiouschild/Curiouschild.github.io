@@ -32,6 +32,8 @@ tags: Medium Backtrack
     What if negative numbers are allowed in the given array?
     How does it change the problem?
     What limitation we need to add to the question to allow negative numbers?
+    1. either positive number or negative number should be used only one time
+    2. the maximum length of result set is given
 
 
 ```java

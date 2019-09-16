@@ -29,6 +29,8 @@ tags: Hard DynamicProgramming
                  Then buy on day 5 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.
 
 
+* dp[i]
+
 ```java
 
 public int maxProfit(int K, int[] prices) {
@@ -53,5 +55,25 @@ public int greedy(int[] prices) {
         }
     }
     return result;
+}
+```
+
+* dp[i][j]
+
+```java
+public int maxProfit(int K, int[] prices) {
+     if(K > prices.length / 2) {
+        return greedy(prices);
+    }
+    if(prices.length == 0) return 0;
+    int[][] dp = new int[K+1][prices.length];
+    for(int i = 1; i <= K; i++) {
+        int min = prices[0];
+        for(int j = 1; j < prices.length; j++) {
+            min = Math.min(min, prices[j]-dp[i-1][j-1]);
+            dp[i][j] = Math.max(dp[i][j-1], prices[j]-min);
+        }
+    }
+    return dp[K][prices.length-1];
 }
 ```
