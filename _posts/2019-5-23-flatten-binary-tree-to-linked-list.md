@@ -32,7 +32,7 @@ tags: Medium Tree
               6
 
 
-* Return tail.
+* Return tail of the flattened subtree
 
 ```java
 
