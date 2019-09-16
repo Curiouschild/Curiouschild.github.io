@@ -31,6 +31,9 @@ tags: Medium Tree
              \
               6
 
+
+* Return tail.
+
 ```java
 
 class Solution {
