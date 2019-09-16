@@ -52,6 +52,38 @@ tags: Medium Stack String
     sth.png.
 
 
+A stranger case:
+"root1\n    abc.txt"
+result == length of "    abc.txt"
+
+* split string
+
+```java
+public int lengthLongestPath(String input) {
+    String[] arr = input.split("\n");
+    if(arr.length == 1 && arr[0].contains(".")) return arr[0].length();
+    int len = 1;
+    int result = 0;
+    Stack<String> stack = new Stack<>();
+    stack.push("");
+    for(int i = 0; i < arr.length; i++) {
+        String s = arr[i];
+        int j = s.lastIndexOf("\t");
+        int tCnt = j+1;
+        s = s.substring(j+1, s.length());
+        while(tCnt < stack.size()) {
+            String prev = stack.pop();
+            len -= prev.length()+1;
+        }
+        len += 1+s.length();
+        stack.push(s);
+        if(s.contains(".")) {
+            result = Math.max(result, len-1);
+        }
+    }
+    return result;
+  }
+```
 
 * Stack stores the length of dirs. len is the curr length of absolute path
 
