@@ -2,7 +2,7 @@
 title:  "246. Strobogrammatic Number"
 date:   2019-05-25 10:53:00 +0930
 categories: Leetcode
-tags: Easy
+tags: Easy Math
 ---
 
 [{{page.title}}](https://leetcode.com/problems/strobogrammatic-number/){:target="_blank"}
