@@ -48,7 +48,11 @@ tags: Medium DynamicProgramming
 
     The path sum is (3 + 1) = 4.
 
-* Iterative counting the leafs of each node
+
+* Iterative counting the leafs of each node Map < position, cnt >
+
+Note: Another easy solution is to convert the array into a tree, then traverse.
+A trick is to use a HashMap to represents the tree. Map< position, value>
 
 ```java
 
