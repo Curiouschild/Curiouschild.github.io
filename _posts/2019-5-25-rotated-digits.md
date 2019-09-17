@@ -28,7 +28,7 @@ tags: Easy Recursive
       N  will be in range [1, 10000].
 
 
-* DP represents three states
+* Smart DP representing three states [source](https://leetcode.com/problems/rotated-digits/discuss/117975/Java-dp-solution-9ms){:target="_blank"}
 
 ```java
 
