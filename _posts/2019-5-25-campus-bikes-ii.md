@@ -24,6 +24,11 @@ tags: Medium Array Backtrack
     Explanation:
     We assign bike 0 to worker 0, bike 1 to worker 1. The Manhattan distance of both assignments is 3, so the output is 6.
 
+    Note:
+
+        0 <= workers[i][0], workers[i][1], bikes[i][0], bikes[i][1] < 1000
+        All worker and bike locations are distinct.
+        1 <= workers.length <= bikes.length <= 10
 
 ```java
 
