@@ -29,7 +29,6 @@ tags: Easy Math
         to_delete.length <= 1000
         to_delete contains distinct values between 1 and 1000.
 
-
 * The boolean value is true when the node is a root of a tree in the forest
 
 ```java
@@ -58,3 +57,26 @@ public List<TreeNode> dfs(TreeNode root, HashSet<Integer> set, boolean isRoot) {
     return result;
 }
 ```
+
+* The boolean value is true when the parent node is to be removed 
+
+This is a more concise version.
+
+```java
+
+public List<TreeNode> delNodes(TreeNode root, int[] toDelete) {
+    ArrayList<TreeNode> result = new ArrayList<>();
+    HashSet<Integer> set = new HashSet<>();
+    for(int i : toDelete) set.add(i);
+    dfs(result, set, root, true);
+    return result;
+}
+
+public TreeNode dfs(ArrayList<TreeNode> result, HashSet<Integer> set, TreeNode root, boolean parentIsDeleted) {
+    if(root == null) return null;
+    boolean isDeleted = set.contains(root.val);
+    if(parentIsDeleted && !isDeleted) result.add(root);
+    root.left = dfs(result, set, root.left, isDeleted);
+    root.right = dfs(result, set, root.right, isDeleted);
+    return isDeleted ? null : root;
+}
