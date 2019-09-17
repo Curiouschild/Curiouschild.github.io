@@ -21,7 +21,7 @@ tags: Hard Recursive Math
     Because the range might be a large number, the low and high numbers are represented as string.
 
 
-* Use strobogrammatic number ii
+* Brutal: Use strobogrammatic number ii
 
 This problem reminds me the hard [kth smallest number in lexicographical order](https://curiouschild.github.io/leetcode/2019/04/30/k-th-smallest-in-lexicographical-order.html){:target=_"blank}
 But they are different, it is difficult to find a structured growing tree for this problem.
