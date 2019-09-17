@@ -36,8 +36,8 @@ tags: Easy Tree Recursive
 
 
 
-* An interested prefix sum solution. for reference
-[reference](https://leetcode.com/problems/path-sum-iii/discuss/91878/17-ms-O\(n\)-java-Prefix-sum-method){:target="_blank"}
+* An interested prefix sum solution. for
+[reference](https://leetcode.com/problems/path-sum-iii/discuss/91878/17-ms-O(n)-java-Prefix-sum-method){:target="_blank"}
 
 Key: Remove current sum from the map when this substree is visited.
 
