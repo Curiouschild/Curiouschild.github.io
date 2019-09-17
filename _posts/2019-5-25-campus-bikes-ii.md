@@ -42,6 +42,7 @@ public void backtrack(int[][] ws, int[][] bs, int index, boolean[] vb, int sum) 
         result = Math.min(result, sum);
         return;
     }
+    if(sum >= result) return; // pruning
     for(int i = 0; i < bs.length; i++) {
         if(vb[i]) continue;
         vb[i] = true;
