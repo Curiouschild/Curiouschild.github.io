@@ -34,6 +34,37 @@ tags: Easy Tree Recursive
     3. -3 -> 11
 
 
+
+
+* An interested prefix sum solution. for reference
+[reference](https://leetcode.com/problems/path-sum-iii/discuss/91878/17-ms-O\(n\)-java-Prefix-sum-method){:target="_blank"}
+
+Key: Remove current sum from the map when this substree is visited.
+
+```java
+
+public int pathSum(TreeNode root, int sum) {
+     HashMap<Integer, Integer> preSum = new HashMap();
+     preSum.put(0,1);
+     return helper(root, 0, sum, preSum);
+ }
+
+ public int helper(TreeNode root, int currSum, int target, HashMap<Integer, Integer> preSum) {
+     if (root == null) {
+         return 0;
+     }
+
+     currSum += root.val;
+     int res = preSum.getOrDefault(currSum - target, 0);
+     preSum.put(currSum, preSum.getOrDefault(currSum, 0) + 1);
+
+     res += helper(root.left, currSum, target, preSum) + helper(root.right, currSum, target, preSum);
+     preSum.put(currSum, preSum.get(currSum) - 1);
+     return res;
+ }
+
+ ```
+
 ```java
 // path sum of this tree
 public int pathSum(TreeNode root, int sum) {
