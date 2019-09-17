@@ -28,6 +28,42 @@ tags: Easy Recursive
       N  will be in range [1, 10000].
 
 
+* DP represents three states
+
+```java
+
+public int rotatedDigits(int N) {
+    int[] dp = new int[1+N];
+    // 0 -> invalid;
+    // 1 -> retate to itself;
+    // 2 -> rotate to a different number
+
+    int result = 0;
+    for(int i = 0; i <= N; i++) {
+        if(i <= 9) {
+            if(i == 0 || i == 1 || i == 8) dp[i] = 1;
+            else if(i == 2 || i == 5 || i == 6 || i == 9) {
+                dp[i] = 2;
+                result++;
+            }
+        } else {
+            int prefix = dp[i / 10], lastDigit = dp[i % 10];
+            if(prefix == 0 || lastDigit == 0) dp[i] = 0;
+            else if(prefix == 1 && lastDigit == 1)  dp[i] = 1;
+            else {
+                dp[i] = 2;
+                result++;
+            }
+        }
+    }
+    return result;
+}
+
+```
+
+
+* Brutal force to generate all candidates
+
 
 ```java
 
