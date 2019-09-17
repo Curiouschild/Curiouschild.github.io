@@ -30,6 +30,35 @@ tags: Medium Array Backtrack
         All worker and bike locations are distinct.
         1 <= workers.length <= bikes.length <= 10
 
+* DP with state mask
+
+```java 
+public int assignBikes(int[][] workers, int[][] bikes) {
+    int N = workers.length, M = bikes.length;
+    int[][] dp = new int[N+1][1<<M];
+    for(int i = 1; i < dp.length; i++)
+        Arrays.fill(dp[i], 2000 * 10);
+    int result = Integer.MAX_VALUE;
+    for(int i = 1; i < dp.length; i++) {
+        for(int s = 0; s < dp[0].length; s++) {
+            for(int j = 0; j < M; j++) {
+                if(((1 << j) & s) != 0) { // find a 1 to remove
+                    int p = (1 << j) ^ s; // previous state; reomve a 1 from current state --> remove a used bike
+                    int d = Math.abs(workers[i-1][0]-bikes[j][0]) + Math.abs(workers[i-1][1]-bikes[j][1]);
+                    dp[i][s] = Math.min(dp[i][s], dp[i-1][p] + d);
+                    if(i == dp.length-1) // all N worker, time to record the result
+                        result = Math.min(result, dp[i][s]);
+                }
+            }
+        }
+    }
+    return result;
+}
+```
+
+* Backtrack with pruning
+
+
 ```java
 
 int result = Integer.MAX_VALUE;
