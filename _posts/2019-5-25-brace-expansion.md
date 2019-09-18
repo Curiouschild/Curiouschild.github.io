@@ -1,8 +1,8 @@
 ---
 title:  "1087. Brace Expansion"
-date:   2019-05-25 10:53:00 +0930
+date:   2019-05-25 19:38:00 +0930
 categories: Leetcode
-tags: Easy Math
+tags: Medium String Recursion
 ---
 
 [{{page.title}}](https://leetcode.com/problems/brace-expansion/){:target="_blank"}
