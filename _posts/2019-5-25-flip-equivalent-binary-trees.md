@@ -31,7 +31,13 @@ tags: Medium Recursive Tree
         Each value in each tree will be a unique integer in the range [0, 99].
 
 
+
+
 * Easy Divide and Conquer
+
+Another approach:
+Since the values in the tree are unique. We can also convert two trees to a canonical representation, then
+compare equality. (eg. always visit the smaller node of a pair of sister nodes)
 
 ```java
 
