@@ -60,7 +60,8 @@ public boolean isStretchy(String t, String s) {
     int i = 0, j = 0;
     int cnt = 0;
     while(i < t.length() || j < s.length()) {
-        if(i == t.length() && j < s.length()) return false;
+        if(i == t.length() && j < s.length()) return false; // t: eeeeeeee
+                                                            // s: ed
         if(j < s.length() && t.charAt(i) == s.charAt(j)) {
             i++;
             j++;
