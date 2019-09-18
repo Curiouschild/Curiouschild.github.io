@@ -2,7 +2,7 @@
 title:  "809. Expressive Words"
 date:   2019-05-25 22:44:00 +0930
 categories: Leetcode
-tags: Easy Recursive
+tags: Medium String
 ---
 
 [{{page.title}}](https://leetcode.com/problems/expressive-words/){:target="_blank"}
