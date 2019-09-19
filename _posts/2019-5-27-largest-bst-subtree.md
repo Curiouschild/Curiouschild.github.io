@@ -65,3 +65,30 @@ class Solution {
     }
   }
 ```
+
+* More concise version
+
+```java
+
+class Solution {
+    int result = 0;
+    public int largestBSTSubtree(TreeNode root) {
+        find(root);
+        return result;
+    }
+    
+    // return {max, min, cnt}
+    // {0, 0, -1} invalid substree
+    public int[] find(TreeNode root) {
+        if(root == null) return new int[]{Integer.MIN_VALUE,Integer.MAX_VALUE,0};
+        int[] l = find(root.left), r = find(root.right);
+        if(l[2] == -1 || r[2] == -1 || root.val <= l[0] || root.val >= r[1]) {
+            return new int[]{0,0,-1}; // invalid subtree or current root
+        }
+        int cnt = 1 + l[2] + r[2];
+        result = Math.max(result, cnt);
+        return new int[] {Math.max(root.val, r[0]), Math.min(root.val, l[1]), cnt};
+    }
+}
+
+```
