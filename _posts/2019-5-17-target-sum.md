@@ -32,6 +32,32 @@ tags: Medium Knapsack
         The sum of elements in the given array will not exceed 1000.
         Your output answer is guaranteed to be fitted in a 32-bit integer.
 
+* Recursion with memo
+
+```java
+public int findTargetSumWays(int[] nums, int S) {
+    return dp(nums, nums.length-1, Integer.valueOf(S), new HashMap<String, Integer>());
+}
+
+public int dp(int[] nums, int i, int t, HashMap<String, Integer> map) {
+    if(i == -1) return t == 0 ? 1 : 0;
+    String k = "" + t + "," + i;
+    if(map.containsKey(k)) return map.get(k);
+    int cnt = dp(nums, i-1, t-nums[i], map)
+            + dp(nums, i-1, t+nums[i], map);
+    map.put(k, cnt);
+    return cnt;
+}
+```
+
+
+
+
+* Bottom Up
+
+dp[i] relies only on dp[i-1]; init dp[0][sum] = 1 (here sum is the offset + zero)
+the actual range of the sum (index j) is -sum ~ sum, plus offset sum --> 0 ~ 2*sum
+
 ```java
 
 class Solution {
