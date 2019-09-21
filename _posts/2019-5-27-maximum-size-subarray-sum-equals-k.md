@@ -1,94 +1,49 @@
 ---
-title:  "333. Largest BST Subtree"
-date:   2019-05-26 15:58:00 +0930
+title:  "325. Maximum Size Subarray Sum Equals k"
+date:   2019-05-27 19:39:00 +0930
 categories: Leetcode
-tags: Medium Tree
+tags: Medium Array
 ---
 
-[{{page.title}}](https://leetcode.com/problems/largest-bst-subtree/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/){:target="_blank"}
 
-    Given a binary tree, find the largest subtree which is a Binary Search Tree (BST), where largest means
-    subtree with largest number of nodes in it.
+    Given an array nums and a target value k, find the maximum length of a subarray that sums to k. If there
+    isn't one, return 0 instead.
 
     Note:
-    A subtree must include all of its descendants.
+    The sum of the entire nums array is guaranteed to fit within the 32-bit signed integer range.
 
-    Example:
+    Example 1:
 
-    Input: [10,5,15,1,8,null,7]
+    Input: nums = [1, -1, 5, -2, 3], k = 3
+    Output: 4
+    Explanation: The subarray [1, -1, 5, -2] sums to 3 and is the longest.
 
-       10
-       / \
-      5  15
-     / \   \
-    1   8   7
+    Example 2:
 
-    Output: 3
-    Explanation: The Largest BST Subtree in this case is the highlighted one.
-                 The return value is the subtree's size, which is 3.
+    Input: nums = [-2, -1, 2, 1], k = 1
+    Output: 2
+    Explanation: The subarray [-1, 2] sums to 1 and is the longest.
 
-    Follow up:
-    Can you figure out ways to solve it with O(n) time complexity?
+    Follow Up:
+    Can you do it in O(n) time?
 
 
 ```java
 
-class Solution {
+public int maxSubArrayLen(int[] nums, int k) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+    map.put(0, -1);
+    int sum = 0;
     int result = 0;
-    public int largestBSTSubtree(TreeNode root) {
-        find(root);
-        return result;
-    }
-
-    // return {max, min, cnt}
-    // {0, 0, -1} invalid substree
-    public int[] find(TreeNode root) {
-        if(root == null) return null;
-        int[] l = find(root.left), r = find(root.right);
-        if(l != null && (l[2] == -1 || root.val <= l[0]) || r != null && (r[2] == -1 || root.val >= r[1])) {
-            return new int[]{0,0,-1}; // subtree or the curr tree is invalid
+    for(int i = 0; i < nums.length; i++) {
+        sum += nums[i];
+        if(map.containsKey(sum-k)) { // find a candidate
+            result = Math.max(result, i-map.get(sum-k));
         }
-        int max = root.val, min = root.val, cnt = 1;
-        if(l != null) {
-            max = Math.max(max, l[0]);
-            min = Math.min(min, l[1]);
-            cnt += l[2];
-        }
-        if(r != null) {
-            max = Math.max(max, r[0]);
-            min = Math.min(min, r[1]);
-            cnt += r[2];
-        }
-
-        result = Math.max(result, cnt);
-        return new int[] {max, min, cnt};
+        if(!map.containsKey(sum)) map.put(sum, i); // keep the smallest index
     }
-  }
-```
-
-* More concise version
-
-```java
-
-class Solution {
-    int result = 0;
-    public int largestBSTSubtree(TreeNode root) {
-        find(root);
-        return result;
-    }
-    
-    // return {max, min, cnt}
-    // {0, 0, -1} invalid substree
-    public int[] find(TreeNode root) {
-        if(root == null) return new int[]{Integer.MIN_VALUE,Integer.MAX_VALUE,0};
-        int[] l = find(root.left), r = find(root.right);
-        if(l[2] == -1 || r[2] == -1 || root.val <= l[0] || root.val >= r[1]) {
-            return new int[]{0,0,-1}; // invalid subtree or current root
-        }
-        int cnt = 1 + l[2] + r[2];
-        result = Math.max(result, cnt);
-        return new int[] {Math.max(root.val, r[0]), Math.min(root.val, l[1]), cnt};
-    }
+    return result;
 }
 
 ```

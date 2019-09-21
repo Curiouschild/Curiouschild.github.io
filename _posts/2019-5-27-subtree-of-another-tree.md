@@ -1,6 +1,6 @@
 ---
 title:  "572. Subtree of Another Tree"
-date:   2019-05-26 23:45:00 +0930
+date:   2019-05-27 23:45:00 +0930
 categories: Leetcode
 tags: Easy Tree
 ---
@@ -19,6 +19,7 @@ tags: Easy Tree
        4   5
       / \
      1   2
+
 
     Given tree t:
 

@@ -1,6 +1,6 @@
 ---
 title:  "333. Largest BST Subtree"
-date:   2019-05-26 15:58:00 +0930
+date:   2019-05-27 15:58:00 +0930
 categories: Leetcode
 tags: Medium Tree
 ---
@@ -76,7 +76,7 @@ class Solution {
         find(root);
         return result;
     }
-    
+
     // return {max, min, cnt}
     // {0, 0, -1} invalid substree
     public int[] find(TreeNode root) {

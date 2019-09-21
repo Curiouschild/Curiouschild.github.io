@@ -1,6 +1,6 @@
 ---
 title:  "713. Subarray Product Less Than K"
-date:   2019-05-26 12:05:00 +0930
+date:   2019-05-27 12:05:00 +0930
 categories: Leetcode
 tags: Medium Array
 ---
