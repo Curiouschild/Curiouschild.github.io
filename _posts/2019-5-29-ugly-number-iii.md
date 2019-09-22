@@ -41,9 +41,18 @@ tags: Medium BinarySearch Math
         It's guaranteed that the result will be in range [1, 2 * 10^9]
 
 
-* binray search
+* Binray search & Math
 
-remember how to calculate gcd and lcm
+remember how to calculate gcd and lcm.
+
+    Euclid’s algorithm is based on the following property: if p>q then the gcd of p and q is the same as the
+    gcd of p%q and q. p%q is the remainder of p which cannot be divided by q, e.g. 33 % 5 is 3. This is based
+    on the fact that the gcd of p and q also must divided (p-q) or (p-2q) or (p-3q). Therefore you can subtract
+    the maximum of a multitude q from p which is p%q.
+    a * b = x * gcd * y * gcd
+    lcm = x * y * gcd = a * b / gcd
+
+    Math is beautiful.
 
 ```java
 
