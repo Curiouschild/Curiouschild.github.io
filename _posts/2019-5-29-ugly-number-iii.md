@@ -69,7 +69,7 @@ class Solution {
             } else if(order < k) {
                 l = mid + 1;
             } else {
-                r = mid;
+                r = mid; // potential answer
             }
         }
         return l;
