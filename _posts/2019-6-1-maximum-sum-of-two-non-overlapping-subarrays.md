@@ -45,7 +45,43 @@ tags: Medium Array
         L + M <= A.length <= 1000
         0 <= A[i] <= 1000
 
+* O(N)
+  - cache the largest array in A[0:j] and A[i:] with two arrays
 
+```java
+
+public int maxSumTwoNoOverlap(int[] A, int L, int M) {
+    int[] prefix = new int[A.length+1];
+    for(int i = 1; i < prefix.length; i++)
+        prefix[i] = A[i-1] + prefix[i-1];
+    int[] dp1 = new int[A.length]; // Largest subarray with length M in A[0:i]
+    int[] dp2 = new int[A.length]; // Largest subarray with length M in A[i:]
+    int sum = prefix[M] - prefix[0];
+    dp1[M-1] = sum;
+    for(int i = M; i < A.length; i++) {
+        sum += (A[i]-A[i-M]);
+        dp1[i] = Math.max(sum, dp1[i-1]);
+    }
+    sum = prefix[A.length] - prefix[A.length-M];
+    dp2[A.length-M] = sum;
+    for(int i = A.length-M-1; i >= 0; i--) {
+        sum += (A[i]-A[i+M]);
+        dp2[i] = Math.max(sum, dp2[i+1]);
+    }
+    int result = 0;
+    for(int i = 0; i + L - 1 < A.length; i++) {
+        int j = i + L - 1;
+        int sumL = prefix[j+1] - prefix[i];
+        int sumM = Math.max(i>1 ? dp1[i-1] : 0, j+1 < A.length ? dp2[j+1] : 0);
+        result = Math.max(result, sumM + sumL);
+    }
+    return result;
+}
+
+```
+
+
+* Brutal Force
 
 ```java
 
