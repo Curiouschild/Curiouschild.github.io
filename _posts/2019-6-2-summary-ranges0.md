@@ -5,7 +5,7 @@ categories: Leetcode
 tags: Medium Matrix
 ---
 
-[{{page.title}}](https://leetcode.com/problems/summary-ranges/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/max-increase-to-keep-city-skyline/){:target="_blank"}
 
     Given an 2D board, count how many battleships are in it. The battleships are represented with 'X's, empty
     slots are represented with '.'s. You may assume the following rules:

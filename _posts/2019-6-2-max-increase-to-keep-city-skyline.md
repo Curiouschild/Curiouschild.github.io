@@ -1,82 +1,67 @@
 ---
-title:  "419. Battleships in a Board"
-date:   2019-06-02 10:45:00 +0930
+title:  "807. Max Increase to Keep City Skyline"
+date:   2019-06-02 11:01:00 +0930
 categories: Leetcode
 tags: Medium Matrix
 ---
 
-[{{page.title}}](https://leetcode.com/problems/summary-ranges/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/max-increase-to-keep-city-skyline/){:target="_blank"}
 
-    Given an 2D board, count how many battleships are in it. The battleships are represented with 'X's, empty
-    slots are represented with '.'s. You may assume the following rules:
+    In a 2 dimensional array grid, each value grid[i][j] represents the height of a building located there. We
+    are allowed to increase the height of any number of buildings, by any amount (the amounts can be different
+    for different buildings). Height 0 is considered to be a building as well.
 
-        You receive a valid board, made of only battleships or empty slots.
-        Battleships can only be placed horizontally or vertically. In other words, they can only be made of the
-        shape 1xN (1 row, N columns) or Nx1 (N rows, 1 column), where N can be of any size.
-        At least one horizontal or vertical cell separates between two battleships - there are no adjacent
-        battleships.
+    At the end, the "skyline" when viewed from all four directions of the grid, i.e. top, bottom, left, and 
+    right, must be the same as the skyline of the original grid. A city's skyline is the outer contour of the
+    rectangles formed by all the buildings when viewed from a distance. See the following example.
+
+    What is the maximum total sum that the height of the buildings can be increased?
 
     Example:
+    Input: grid = [[3,0,8,4],[2,4,5,7],[9,2,6,3],[0,3,1,0]]
+    Output: 35
+    Explanation:
+    The grid is:
+    [ [3, 0, 8, 4],
+      [2, 4, 5, 7],
+      [9, 2, 6, 3],
+      [0, 3, 1, 0] ]
 
-    X..X
-    ...X
-    ...X
+    The skyline viewed from top or bottom is: [9, 4, 8, 7]
+    The skyline viewed from left or right is: [8, 7, 9, 3]
 
-    In the above board there are 2 battleships.
+    The grid after increasing the height of buildings without affecting skylines is:
 
-    Invalid Example:
+    gridNew = [ [8, 4, 8, 7],
+                [7, 4, 7, 7],
+                [9, 4, 8, 7],
+                [3, 3, 3, 3] ]
 
-    ...X
-    XXXX
-    ...X
+    Notes:
 
-    This is an invalid board that you will not receive - as battleships will always have a cell separating between them.
-
-    Follow up:
-    Could you do it in one-pass, using only O(1) extra memory and without modifying the value of the board?
+        1 < grid.length = grid[0].length <= 50.
+        All heights grid[i][j] are in the range [0, 100].
+        All buildings in grid[i][j] occupy the entire grid cell: that is, they are a 1 x 1 x grid[i][j]
+        rectangular prism.
 
 
-* Follow up
+* Record row max and col max
   - easier than Medium
-  - count the # of horizontal consecutive X --> result
-  - for each vertical ship of length N --> result -= (N-1) // minus overcount vertical ships
+
 ```java
 
-public int countBattleships(char[][] board) {
-    int result = 0;
-    for(int i = 0; i < board.length; i++) {
-        int cnt = 0;
-        boolean hasX = false;
-        for(int j = 0; j < board[0].length; j++) {
-            if(board[i][j] == 'X') {
-                hasX = true;
-                if(i+1 < board.length && board[i+1][j] == 'X')
-                    result--;
-            } else {
-                if(hasX) result++;
-                hasX = false;
-            }
+public int maxIncreaseKeepingSkyline(int[][] grid) {
+    int[] maxRow = new int[grid.length], maxCol = new int[grid[0].length];
+    for(int i = 0; i < grid.length; i++) {
+        for(int j = 0; j < grid[0].length; j++) {
+            maxRow[i] = Math.max(maxRow[i], grid[i][j]);
+            maxCol[j] = Math.max(maxCol[j], grid[i][j]);
         }
-        if(hasX) result++;
     }
-    return result;
-}
-```
-
-* Modify boards
-```java
-public int countBattleshipsModifyBoard(char[][] board) {
     int result = 0;
-    for(int i = 0; i < board.length; i++) {
-        for(int j = 0; j < board[0].length; j++) {
-            if(board[i][j] == 'X') {
-                result++;
-                for(int x = i; x >= 0 && board[x][j] == 'X'; x--) board[x][j] = '.';
-                for(int x = i+1; x < board.length && board[x][j] == 'X'; x++) board[x][j] = '.';
-                for(int y = j; y >= 0 && board[i][y] == 'X'; y--) board[i][y] = '.';
-                for(int y = j+1; y < board[0].length && board[i][y] == 'X'; y++) board[i][y] = '.';
-
-            }
+    for(int i = 0; i < grid.length; i++) {
+        for(int j = 0; j < grid[0].length; j++) {
+            result += Math.min(maxRow[i], maxCol[j])-grid[i][j];
         }
     }
     return result;
