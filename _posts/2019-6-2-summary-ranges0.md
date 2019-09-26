@@ -38,6 +38,8 @@ tags: Medium Matrix
 
 * Follow up
   - easier than Medium
+  - count the # of horizontal consecutive X --> result
+  - for each vertical ship of length N --> result -= (N-1) // minus overcount vertical ships
 ```java
 
 public int countBattleships(char[][] board) {
