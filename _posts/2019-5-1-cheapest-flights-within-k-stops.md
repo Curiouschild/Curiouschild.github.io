@@ -99,6 +99,45 @@ public int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
 }
 ```
 
+* A more understandable version
+
+```java
+
+public int findCheapestPrice(int n, int[][] flights, int src, int dst, int K) {
+    if(src == dst) return 0;
+    ArrayList<int[]>[] graph = new ArrayList[n];
+    for(int i = 0; i < graph.length; i++)
+        graph[i] = new ArrayList<>();
+    for(int[] f : flights)
+        graph[f[0]].add(new int[]{f[1],f[2]});
+    PriorityQueue<City> q = new PriorityQueue<>((a,b)->(a.cost-b.cost));
+    for(int[] f : graph[src])
+        q.offer(new City(f[0], 0, f[1]));
+    while(!q.isEmpty()) {
+        City curr = q.poll();
+        if(curr.index == dst) {
+            return curr.cost;
+        } else if(curr.stop < K) {
+            for(int[] f : graph[curr.index])
+                q.offer(new City(f[0], curr.stop+1, curr.cost+f[1]));
+        }
+    }
+    return -1;
+}
+
+class City {
+    int index;
+    int stop;
+    int cost;
+    public City(int index, int stop, int cost) {
+        this.index = index;
+        this.stop = stop;
+        this.cost = cost;
+    }
+}
+
+```
+
 * DFS with early exit accepted but extremely slow
 
 This trash might be what I came up with in an interview...
