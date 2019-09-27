@@ -22,6 +22,8 @@ tags: Medium Math
     Output: [1,2]
 
 * Boyer-Moore Majority Vote algorithm
+  - n1 and n2 are not necessarily the valid results
+  - the second pass check their validity
 
 ```java
 
