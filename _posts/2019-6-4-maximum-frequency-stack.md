@@ -49,6 +49,50 @@ tags: Hard DataStructure
         The total number of FreqStack.push and FreqStack.pop calls will not exceed 150000 across all test cases.
 
 
+* O(N)
+  - duplicate at each freqency
+  - When increase freqency for an element:
+    - do not remove the element in the current stack;
+    - keep it and add another copy to the next stack
+    - by doing this we can keep the relative adding order of the elements
+
+```java
+
+class FreqStack {
+    int high;
+    HashMap<Integer, Stack<Integer>> f2k;
+    HashMap<Integer, Integer> k2f;
+    public FreqStack() {
+        f2k = new HashMap<>();
+        k2f = new HashMap<>();
+        high = 0;
+    }
+
+    public void push(int x) {
+        int f = k2f.getOrDefault(x, 0);
+        k2f.put(x, ++f);
+        Stack<Integer> s = f2k.getOrDefault(f, new Stack<>());
+        s.push(x);
+        f2k.put(f, s);
+        high = Math.max(high, f);
+    }
+
+    public int pop() {
+        int result = f2k.get(high).pop();
+
+        if(k2f.get(result) == 1) k2f.remove(result);
+        else k2f.put(result, k2f.get(result)-1);
+
+        if(f2k.get(high).isEmpty()) {
+            f2k.remove(high);
+            high--;
+        }
+        return result;
+    }
+}
+
+```
+
 
 * Pass on first submit
   - similar to LFC & All in One data structure
