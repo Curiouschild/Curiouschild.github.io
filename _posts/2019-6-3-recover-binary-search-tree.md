@@ -52,6 +52,62 @@ tags: Hard Tree
         A solution using O(n) space is pretty straight forward.
         Could you devise a constant space solution?
 
+* O(1) Space
+  - inorder traverse twice(l-root-r && r-root-l) to find x and y
+  - correct the swaped elements
+
+```java
+
+class Solution {
+    TreeNode pre;
+    Integer x, y;
+    boolean hasX, hasY;
+    public void recoverTree(TreeNode root) {
+        ascending(root);
+        pre = null;
+        descending(root);
+        traverse(root, x, y);
+    }
+
+    public void descending(TreeNode root) {
+        if(y != null) return;
+        if(root == null) return;
+        descending(root.right);
+        if(pre != null && pre.val < root.val) {
+            y = pre.val;
+            return;
+        }
+        pre = root;
+        descending(root.left);
+    }
+    public void ascending(TreeNode root) {
+        if(x != null) return;
+        if(root == null) return;
+        ascending(root.left);
+        if(pre != null && pre.val > root.val) {
+            x = pre.val;
+            return;
+        }
+        pre = root;
+        ascending(root.right);
+    }
+
+    public void traverse(TreeNode root, int x, int y) {
+        if(hasX && hasY) return;
+        if(root == null) return;
+        if(root.val == x) {
+            root.val = y;
+            hasX = true;
+        }
+        else if(root.val == y) {
+            root.val = x;
+            hasY = true;
+        }
+        traverse(root.left, x, y);
+        traverse(root.right, x, y);
+    }
+}
+```
 
 * Naive O(N)
   - inorder traverse the tree
