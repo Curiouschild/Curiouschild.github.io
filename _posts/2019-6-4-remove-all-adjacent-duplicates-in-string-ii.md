@@ -1,6 +1,6 @@
 ---
 title:  "1209. Remove All Adjacent Duplicates in String II"
-date:   2019-06-04 15:38:00 +0930
+date:   2019-06-04 21:38:00 +0930
 categories: Leetcode
 tags: Medium Stack Recursive
 ---
