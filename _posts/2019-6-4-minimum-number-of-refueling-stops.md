@@ -49,8 +49,6 @@ tags: Hard Greedy DynamicProgramming
     and refuel from 10 liters to 50 liters of gas.  We then drive to and reach the target.
     We made 2 refueling stops along the way, so we return 2.
 
-
-
     Note:
 
         1 <= target, startFuel, stations[i][1] <= 10^9
