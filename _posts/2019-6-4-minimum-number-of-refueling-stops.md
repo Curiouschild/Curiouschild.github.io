@@ -58,6 +58,7 @@ tags: Hard Greedy DynamicProgramming
         0 < stations[0][0] < stations[1][0] < ... < stations[stations.length-1][0] < target
 
 * PriorityQueue greedy
+  - when current fuel < 0, try to fuel the car with the largest station before the current station
 
 ```java
 
