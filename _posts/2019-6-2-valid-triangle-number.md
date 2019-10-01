@@ -43,7 +43,7 @@ public int triangleNumber(int[] nums) {
     }
     return result;
 }
-
+```
 
 * simple binary search
 
