@@ -36,29 +36,19 @@ tags: Hard DynamicProgramming SubSequence
 
 String[][] memo;
 public String shortestCommonSupersequence(String s1, String s2) {
-    memo = new String[s1.length()][s2.length()];
+    int n = s1.length(), m = s2.length();
+    memo = new String[n][m];
     String lcs = lcs(s1, s2);
-    // System.out.println(lcs);
-    int[] a1 = new int[lcs.length()], a2 = new int[lcs.length()];
-    mark(a1, s1, lcs);
-    mark(a2, s2, lcs);
     StringBuilder sb = new StringBuilder();
-    for(int i = 0; i < lcs.length(); i++) {
-        if(i == 0) sb.append(s1.substring(0, a1[0])).append(s2.substring(0, a2[0]));
-        sb.append(s1.charAt(a1[i]));
-        if(i+1 < lcs.length()) sb.append(s1.substring(a1[i]+1, a1[i+1])).append(s2.substring(a2[i]+1, a2[i+1]));
-        if(i == lcs.length()-1) sb.append(s1.substring(a1[i]+1)).append(s2.substring(a2[i]+1));
-    }
-    return sb.toString();
-}
-public void mark(int[] arr, String s, String lcs) {
-    int i = 0, j = 0;
-    while(j < lcs.length()) {
-        while(i < s.length() && s.charAt(i) != lcs.charAt(j)) i++;
-        arr[j] = i;
+    int i = 0, j = 0, k = 0;
+    while(i < n || j < m) {
+        while(i < n && (k >= lcs.length() || s1.charAt(i) != lcs.charAt(k))) sb.append(s1.charAt(i++));
+        while(j < m && (k >= lcs.length() || s2.charAt(j) != lcs.charAt(k))) sb.append(s2.charAt(j++));
+        if(k < lcs.length()) sb.append(lcs.charAt(k++));
         i++;
         j++;
     }
+    return sb.toString();
 }
 public String lcs(String s1, String s2) {
     int i = s1.length()-1, j = s2.length()-1;
