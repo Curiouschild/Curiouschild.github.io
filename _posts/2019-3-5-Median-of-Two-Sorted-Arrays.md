@@ -49,3 +49,43 @@ public int getArrValue(int index, int[] arr) {
     return index >= arr.length ? Integer.MAX_VALUE : index >= 0 ? arr[index] : Integer.MIN_VALUE;
 }
 ```
+
+* Conscise
+
+```java
+
+public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    if(nums1.length > nums2.length) {
+        int[] temp = nums1;
+        nums1 = nums2;
+        nums2 = temp;
+    }
+    int n = nums1.length, m = nums2.length;
+    int l = 0, r = n;
+    boolean odd = ((n + m) & 1) == 1;
+    double result = 0.0;
+    int half = (m + n +1) / 2;
+    while(l <= r) {
+        int mid = l + (r-l) / 2;
+        int inN = mid;
+        int inM = half - inN;
+        int i = inN-1, j = inM - 1;
+        int nl = i < 0 ? Integer.MIN_VALUE : nums1[i];
+        int nr = i == n-1 ? Integer.MAX_VALUE : nums1[i+1];
+        int ml = j < 0 ? Integer.MIN_VALUE : nums2[j];
+        int mr = j == m-1 ? Integer.MAX_VALUE : nums2[j+1];
+        if(nl <= mr && ml <= nr) {
+            if(odd) {
+                return (double) Math.max(nl, ml);
+            } else {
+                return (Math.max(nl, ml) + Math.min(nr, mr)) / 2.0;
+            }
+        } else if(nl > mr) {
+            r = mid - 1;
+        } else {
+            l = mid + 1;
+        }
+    }
+    return 0.0;
+}
+```
