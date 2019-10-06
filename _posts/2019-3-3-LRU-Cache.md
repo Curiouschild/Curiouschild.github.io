@@ -19,6 +19,7 @@ tags: LinkedHashMap DataStructure
     The cache is initialized with a positive capacity.
 
 1. Ordered Map Version
+
 ```java
 class LRUCache extends LinkedHashMap<Integer, Integer> {
     int capacity;
@@ -38,80 +39,76 @@ class LRUCache extends LinkedHashMap<Integer, Integer> {
     }
 }
 ```
+
 2. HashMap + Doubly LinkedList Version
 
 ```java
-class LRUCache {
-    int capacity;
-    int size;
+
+public class LRUCache {
     HashMap<Integer, Node> map = new HashMap<>();
-    Node head;
-    Node tail;
+    Node sentinel, tail;
+    int size;
+    private final int capacity;
     public LRUCache(int capacity) {
         this.capacity = capacity;
+        this.size = 0;
+        sentinel = new Node(-1,-1);
     }
     public int get(int key) {
-        Node n = this.map.getOrDefault(key, null);
-        if(n == null) return -1;
+        if(!map.containsKey(key)) return -1;
+        Node n = map.get(key);
         moveToTail(n);
-        return n.val;
-    }
-
-    public void removeHead() {
-        Node newHead = head.next;
-        newHead.pre = null;
-        head.next = null;
-        map.remove(head.key);
-        head = newHead;
-        size--;
-    }
-
-    public void put(int key, int val) {
-        Node n = null;
-        if(map.containsKey(key)) {
-            n = map.get(key);
-            n.val = val;
-            moveToTail(n);
-        } else {
-            size++;
-            n = new Node(key, val);
-            map.put(key, n);
-            if(tail != null) {
-                tail.next = n;
-                n.pre = tail;
-                tail = n;
-            } else {
-                head = n;
-                tail = n;
-            }
-            if(size > capacity) removeHead();
-        }
+        return n.value;
     }
 
     public void moveToTail(Node n) {
         if(n == tail) return;
-        if(n != head) {
-            Node pre = n.pre;
-            pre.next = n.next;
-            n.next.pre = pre;
-            n.next = null;
-            n.pre = null;
-        } else {
-            head = n.next;
-            head.pre = null;
-            n.next = null;
-        }
+        Node p = n.prev, next = n.next;
+        p.next = next;
+        next.prev = p;
+
         tail.next = n;
-        n.pre = tail;
+        n.prev = tail;
+
         tail = n;
+
     }
 
+    public void put(int key, int value) {
+        if(this.capacity == 0) return;
+        if(map.containsKey(key)) {
+            Node n = map.get(key);
+            n.value = value;
+            moveToTail(n);
+        } else {
+            Node n = new Node(key, value);
+            map.put(key, n);
+            if(tail == null) {
+                sentinel.next = n;
+                n.prev = sentinel;
+            } else {
+                tail.next = n;
+                n.prev = tail;
+            }
+            tail = n;
+            size++;
+            if(size > this.capacity) {
+                map.remove(sentinel.next.key);
+                sentinel.next = sentinel.next.next;
+                sentinel.next.prev = sentinel;
+                size--;
+            }
+        }
+
+
+    }
     class Node {
-        int val;
-        int key;
-        Node pre;
-        Node next;
-        public Node(int k, int v) { val = v; key = k;}
+        int key, value;
+        Node prev, next;
+        public Node(int k, int v) {
+            key = k;
+            value = v;
+        }
     }
 }
 ```
