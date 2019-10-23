@@ -21,13 +21,13 @@ tags: Medium LinkedList
     The following example may help you understand the problem better:
 
 
-![img1](/img/posts/insert-into-a-cyclic-sorted-list-1.png)
+![img1](/img/posts/insert-into-a-cyclic-sorted-list-1.jpg)
 
 
     In the figure above, there is a cyclic sorted list of three elements. You are given a reference to the node with value 3, and we need to insert 2 into the list.
 
 
-![img1](/img/posts/insert-into-a-cyclic-sorted-list-1.png)
+![img1](/img/posts/insert-into-a-cyclic-sorted-list-1.jpg)
 
     The new node should insert between node 1 and node 3. After the insertion, the list should look like this,
     and we should still return node 3.
