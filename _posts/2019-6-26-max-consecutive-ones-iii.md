@@ -7,36 +7,33 @@ tags: Medium SlidingWindow
 
 [{{page.title}}](https://leetcode.com/problems/max-consecutive-ones-iii/){:target="_blank"}
 
-    Implementing the class MajorityChecker, which has the following API:
+    Given an array A of 0s and 1s, we may change up to K values from 0 to 1.
 
-        MajorityChecker(int[] arr) constructs an instance of MajorityChecker with the given array arr;
-        int query(int left, int right, int threshold) has arguments such that:
-            0 <= left <= right < arr.length representing a subarray of arr;
-            2 * threshold > right - left + 1, ie. the threshold is always a strict majority of the length of
-            the subarray
-
-    Each query(...) returns the element in arr[left], arr[left+1], ..., arr[right] that occurs at least
-    threshold times, or -1 if no such element exists.
+    Return the length of the longest (contiguous) subarray that contains only 1s.
 
 
 
-    Example:
+    Example 1:
 
-    MajorityChecker majorityChecker = new MajorityChecker([1,1,2,2,1,1]);
-    majorityChecker.query(0,5,4); // returns 1
-    majorityChecker.query(0,3,3); // returns -1
-    majorityChecker.query(2,3,2); // returns 2
+    Input: A = [1,1,1,0,0,0,1,1,1,1,0], K = 2
+    Output: 6
+    Explanation:
+    [1,1,1,0,0,1,1,1,1,1,1]
+    Bolded numbers were flipped from 0 to 1.  The longest subarray is underlined.
 
+    Example 2:
 
+    Input: A = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], K = 3
+    Output: 10
+    Explanation:
+    [0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1]
+    Bolded numbers were flipped from 0 to 1.  The longest subarray is underlined.
 
-    Constraints:
+    Note:
 
-        1 <= arr.length <= 20000
-        1 <= arr[i] <= 20000
-        For each query, 0 <= left <= right < len(arr)
-        For each query, 2 * threshold > right - left + 1
-        The number of queries is at most 10000
-
+      1 <= A.length <= 20000
+      0 <= K <= A.length
+      A[i] is 0 or 1
 
 * Sliding Window
 
