@@ -1,6 +1,6 @@
 ---
 title:  "1157. Online Majority Element In Subarray"
-date:   2019-06-24 23:36:00 +0930
+date:   2019-06-25 23:36:00 +0930
 categories: Leetcode
 tags: Hard BinarySearch
 ---
@@ -12,7 +12,7 @@ tags: Hard BinarySearch
         MajorityChecker(int[] arr) constructs an instance of MajorityChecker with the given array arr;
         int query(int left, int right, int threshold) has arguments such that:
             0 <= left <= right < arr.length representing a subarray of arr;
-            2 * threshold > right - left + 1, ie. the threshold is always a strict majority of the length of 
+            2 * threshold > right - left + 1, ie. the threshold is always a strict majority of the length of
             the subarray
 
     Each query(...) returns the element in arr[left], arr[left+1], ..., arr[right] that occurs at least
