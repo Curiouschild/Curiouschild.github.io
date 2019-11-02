@@ -2,7 +2,7 @@
 title:  "1244. Design A Leaderboard"
 date:   2019-06-27 15:15:00 +0930
 categories: Leetcode
-tags: Medium Design
+tags: Medium Design TreeMap PriorityQueue
 ---
 
 [{{page.title}}](https://leetcode.com/problems/design-a-leaderboard/){:target="_blank"}
@@ -46,6 +46,7 @@ tags: Medium Design
         There will be at most 1000 function calls.
 
 * PriorityQueue
+  - or treemap without enque and deque
 
 ```java
 
