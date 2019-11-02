@@ -2,10 +2,10 @@
 title:  "1071. Greatest Common Divisor of Strings"
 date:   2019-05-23 22:26:00 +0930
 categories: Leetcode
-tags: Hard SegmentTree
+tags: Easy String
 ---
 
-[{{page.title}}](https://leetcode.com/problems/range-sum-query-mutable/){:target="_blank"}
+[{{page.title}}](https://leetcode.com/problems/greatest-common-divisor-of-strings/){:target="_blank"}
 
     For strings S and T, we say "T divides S" if and only if S = T + ... + T  (T concatenated with itself 1 or
     more times)

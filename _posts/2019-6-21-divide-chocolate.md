@@ -36,15 +36,10 @@ tags: Hard BinarySearch
     Output: 5
     Explanation: You can divide the chocolate to [1,2,2], [1,2,2], [1,2,2]
 
-
-
     Constraints:
 
         0 <= K < sweetness.length <= 10^4
         1 <= sweetness[i] <= 10^5
-
-
-
 
 * Binary Search
   - the same with 410. Split Array Largest Sum which is to minimize the maximum
