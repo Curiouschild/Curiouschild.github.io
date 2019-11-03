@@ -40,6 +40,8 @@ tags: Hard Math
 
 
 * Math
+  - https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity
+  - pure math
 
 ```java
 
