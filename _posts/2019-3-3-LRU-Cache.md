@@ -44,70 +44,66 @@ class LRUCache extends LinkedHashMap<Integer, Integer> {
 
 ```java
 
-public class LRUCache {
-    HashMap<Integer, Node> map = new HashMap<>();
-    Node sentinel, tail;
+class LRUCache {
+    int capacity;
     int size;
-    private final int capacity;
+    Node sentinel, tail;
+    HashMap<Integer, Node> map = new HashMap<>(); // key->Node
     public LRUCache(int capacity) {
         this.capacity = capacity;
-        this.size = 0;
-        sentinel = new Node(-1,-1);
+        this.sentinel = new Node(0, 0);
     }
+    
     public int get(int key) {
         if(!map.containsKey(key)) return -1;
-        Node n = map.get(key);
-        moveToTail(n);
-        return n.value;
+        Node curr = map.get(key);
+        if(curr != this.tail) {
+            Node prev = curr.prev, next = curr.next;
+            prev.next = next;
+            next.prev = prev;
+            this.tail.next = curr;
+            curr.prev = this.tail;
+            this.tail = curr;
+        }
+        return curr.val;
     }
 
-    public void moveToTail(Node n) {
-        if(n == tail) return;
-        Node p = n.prev, next = n.next;
-        p.next = next;
-        next.prev = p;
-
-        tail.next = n;
-        n.prev = tail;
-
-        tail = n;
-
-    }
-
-    public void put(int key, int value) {
+    public void put(int key, int val) {
         if(this.capacity == 0) return;
+        Node n;
         if(map.containsKey(key)) {
-            Node n = map.get(key);
-            n.value = value;
-            moveToTail(n);
-        } else {
-            Node n = new Node(key, value);
+            n = map.get(key);
+            n.val = val;
+            this.get(key);
+        } else { // add to list and map
+            n = new Node(key, val);
             map.put(key, n);
-            if(tail == null) {
+            if(this.tail == null) {
                 sentinel.next = n;
                 n.prev = sentinel;
             } else {
-                tail.next = n;
+                this.tail.next = n;
                 n.prev = tail;
             }
             tail = n;
-            size++;
-            if(size > this.capacity) {
-                map.remove(sentinel.next.key);
-                sentinel.next = sentinel.next.next;
-                sentinel.next.prev = sentinel;
-                size--;
+            this.size++;
+            if(this.size > this.capacity) {
+                // remove from list and map
+                Node removed = sentinel.next;
+                sentinel.next = removed.next;
+                removed.next.prev = sentinel;
+                map.remove(removed.key);
+                this.size--;
             }
         }
-
-
     }
+
     class Node {
-        int key, value;
-        Node prev, next;
-        public Node(int k, int v) {
-            key = k;
-            value = v;
+        Node next, prev;
+        int key, val;
+        public Node(int key, int val) {
+            this.key = key;
+            this.val = val;
         }
     }
 }
