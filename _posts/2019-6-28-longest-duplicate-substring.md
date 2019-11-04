@@ -1,6 +1,6 @@
 ---
 title:  "1044. Longest Duplicate Substring"
-date:   2019-06-28 10:51:00 +0930
+date:   2019-06-28 21:35:00 +0930
 categories: Leetcode
 tags: Hard Math BinarySearch
 ---
