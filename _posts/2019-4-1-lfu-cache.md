@@ -41,42 +41,49 @@ tags: DataStructure HashMap LinkedHashSet
 class LFUCache {
     int capacity;
     int min;
-    HashMap<Integer, Integer> map = new HashMap<>(); // k -> v
-    HashMap<Integer, Integer> k2f = new HashMap<>(); // k -> f
-    HashMap<Integer, LinkedHashSet<Integer>> f2k = new HashMap<>(); // frequency -> the linkedhashset contains this key
-    public LFUCache(int capacity) {
+    int size;
+    HashMap<Integer, Integer> map;
+    HashMap<Integer, Integer> k2f;
+    HashMap<Integer, LinkedHashSet<Integer>> f2k;
+    public LFUCache(int capacity){
         this.capacity = capacity;
-        f2k.put(1, new LinkedHashSet<Integer>());
+        map = new HashMap<>();
+        k2f = new HashMap<>();
+        f2k = new HashMap<>();
+        f2k.put(1, new LinkedHashSet<>());
     }
-
     public int get(int key) {
         if(!map.containsKey(key)) return -1;
         int f = k2f.get(key);
         k2f.put(key, f+1);
         f2k.get(f).remove(key);
-        if(!f2k.containsKey(f+1)) f2k.put(f+1, new LinkedHashSet<Integer>());
+        f2k.put(f+1, f2k.getOrDefault(f+1, new LinkedHashSet<>()));
         f2k.get(f+1).add(key);
-        if(min == f && f2k.get(f).isEmpty()) min++;
+        if(f2k.get(min).isEmpty()) {
+            min++;
+        }
         return map.get(key);
     }
-
-    public void put(int key, int value) {
-        if(this.capacity == 0) return;
+    public void put(int key, int val) {
+        if(capacity == 0) return;
         if(map.containsKey(key)) {
-            map.put(key, value);
-            this.get(key);
+            map.put(key, val);
+            get(key);
         } else {
-            if(map.size() == this.capacity) { // remove least requent used element
-                int removedKey = f2k.get(min).iterator().next();
-                map.remove(removedKey);
-                k2f.remove(removedKey);
-                f2k.get(min).remove(removedKey);
-            }
-            map.put(key, value);
-            min = 1;
+            map.put(key, val);
             k2f.put(key, 1);
             f2k.get(1).add(key);
+            size++;
+            if(capacity < size) {
+                Iterator<Integer> it = f2k.get(min).iterator();
+                int removed = it.next();
+                map.remove(removed);
+                k2f.remove(removed);
+                it.remove();
+                size--;
+            }
+            min = 1;
         }
     }
-  }
+}
 ```
