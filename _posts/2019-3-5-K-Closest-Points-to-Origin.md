@@ -2,7 +2,7 @@
 title:  "973. K Closest Points to Origin"
 date:   2019-3-5 21:20:51 +0930
 categories: Leetcode
-tags: PriorityQueue
+tags: PriorityQueue QuickSelect DivideAndConquer
 ---
 
 [{{page.title}}](https://leetcode.com/problems/k-closest-points-to-origin/){:target="_blank"}
@@ -14,6 +14,54 @@ tags: PriorityQueue
     You may return the answer in any order.  The answer is guaranteed to be unique
     (except for the order that it is in.)
 
+* QuickSelect
+  - O(N)
+
+```java
+
+public int[][] kClosest(int[][] points, int K) {
+    quickSelect(points, K, 0, points.length-1);
+    int[][] result = new int[K][2];
+    for(int i = 0; i < K; i++) result[i] = points[i];
+    return result;
+}
+
+public void quickSelect(int[][] points, int K, int start, int end) {
+    if(start > end) return;
+    int pivot = getDS(points[start]);
+    int i = start + 1, j = i;
+    while(i <= end) {
+        int d = getDS(points[i]);
+        if(d <= pivot) {
+            swap(points, i, j);
+            j++;
+        }
+        i++;
+    }
+    j--;
+    swap(points, start, j);
+    if(K == j+1) return;
+    else if(K > j+1) {
+        quickSelect(points, K, j+1, end);
+    } else {
+        quickSelect(points, K, start, j);
+    }
+}
+
+public void swap(int[][] points, int i, int j) {
+    int[] temp = points[i];
+    points[i] = points[j];
+    points[j] = temp;
+}
+
+public int getDS(int[] p) {
+    return p[0] * p[0] + p[1] * p[1];
+}
+
+```
+
+* PriorityQueue
+  - NlogK
 ```java
 public int[][] kClosest(int[][] points, int K) {
     PriorityQueue<int[]> q = new PriorityQueue<>(new Comparator<int[]>() {
